@@ -1,14 +1,11 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - mchadolias
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - mchadolias/tau-appearance-antares
+  - mchadolias/preprocess-antares-dst
+  - mchadolias/academic-cv
+  - mchadolias/daily-task-reporter
+
