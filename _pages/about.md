@@ -10,7 +10,8 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Konstantinoupoleos 7</p>
-    <p>Kavala, Greece</p>
+    <p>Kavala, 65403</p>
+    <p>Eastern Macedonia & Thrace, Greece</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -26,12 +27,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-## About me 
+## About me
 
-I’m a physicist that want to explore the universe’s open question from the elusive neutrinos to the whispers of dark matter. My work sits at the crossroads of experimental astroparticle physics, computational physics, and AI-driven scientific analysis.
+I am a physicist specializing in astroparticle physics, with a focus on neutrino astronomy. My work bridges experimental particle physics, computational modeling, and machine learning, with the goal of uncovering insights into some of the universe’s most elusive phenomena, from neutrinos to potential dark matter signatures.
 
-Recently, I have contributed to the KM3NeT and ANTARES collaborations, I’ve searched for tau neutrinos in the abyss of the Mediterranean, investigated the nature of events in the detectors, and dissected Monte Carlo simulations to push the boundaries of what neutrino telescopes can reveal. My toolkit blends high-performance computing (Slurm, Snakemake), machine learning (PyTorch, GraphNeT), and statistical analysis aimed at answering one question: What are neutrinos trying to tell us?
+I recently graduated with an M.Sc. in Physics from Friedrich-Alexander University Erlangen–Nürnberg, where I worked in the KM3NeT and ANTARES collaborations at the Erlangen Centre for Astroparticle Physics (ECAP). My work included tau neutrino searches, event classification, and detailed Monte Carlo simulation studies, supported by high-performance computing (Slurm, Snakemake) and advanced analysis frameworks (PyTorch, GraphNeT).
 
-My journey into experimental physics began with SpaceDot, a student-led team at Aristotle University of Thessaloniki (AUTH), where we designed the AcubeSAT nanosatellite as part of ESA’s Fly Your Satellite! program. As trajectory subsystem coordinator and co-author of the mission proposal, I modeled orbital radiation environments with OMERE and FASTRAD, this work became the backbone  into my bachelor’s thesis. This experience anchored my philosophy: physics thrives when theory and experiment converse. 
+My path into experimental physics began during my B.Sc. in Physics at Aristotle University of Thessaloniki, where I joined SpaceDot, a student-led nanosatellite team participating in ESA’s Fly Your Satellite! program. As trajectory subsystem coordinator for the AcubeSAT mission, I modeled orbital radiation environments using OMERE and FASTRAD, which became the basis of my bachelor’s thesis. I later interned at the National Centre for Scientific Research “Demokritos,” contributing to KM3NeT/ORCA data analysis.
 
-Beyond the lab, I aim to voluteer into mentoring students, bringing particle physics at public outreach events, or focusing over on chess matches and D&D campaigns.
+Beyond research, I value science communication and mentoring, and I enjoy sharing the excitement of particle physics through public outreach. Outside the lab, I can often be found engaged in a chess match, exploring a new board game, or diving into a Dungeons & Dragons campaign.
