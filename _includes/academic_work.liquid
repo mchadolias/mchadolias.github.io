@@ -1,0 +1,108 @@
+{%- if site.data.academic -%}
+  <div class="documents-container">
+    <div class="documents-header">
+      <h2>Academic Work & Experience</h2>
+      <div class="sort-controls">
+        <button class="sort-btn active" data-sort="date-desc">Newest First</button>
+        <button class="sort-btn" data-sort="date-asc">Oldest First</button>
+        <button class="sort-btn" data-sort="title-asc">Title A-Z</button>
+        <button class="sort-btn" data-sort="title-desc">Title Z-A</button>
+      </div>
+    </div>
+    
+    <div class="documents-list" id="academic-list">
+      {%- for item in site.data.academic -%}
+        <div class="document-item" data-title="{{ item.title | downcase }}" data-date="{{ item.sort_date }}">
+          <h4 class="document-title">{{ item.title }}</h4>
+          
+          <div class="document-meta">
+            {%- if item.type == "thesis" -%}
+              <span class="document-type">{{ item.subtype }}</span>
+              <span class="document-institution">{{ item.institution }}</span>
+            {%- elsif item.type == "internship" -%}
+              <span class="document-type">Internship</span>
+              <span class="document-company">{{ item.company }}</span>
+            {%- endif -%}
+            <span class="document-date">{{ item.date }}</span>
+            {%- if item.duration -%}
+              <span class="document-duration">({{ item.duration }})</span>
+            {%- endif -%}
+          </div>
+          
+          {%- if item.abstract -%}
+            <div class="document-description">
+              <strong>Abstract:</strong> {{ item.abstract }}
+            </div>
+          {%- elsif item.description -%}
+            <div class="document-description">
+              {{ item.description }}
+            </div>
+          {%- endif -%}
+          
+          {%- if item.supervisors -%}
+            <div class="document-details">
+              <strong>Supervisors:</strong> {{ item.supervisors }}
+            </div>
+          {%- endif -%}
+          
+          {%- if item.technologies -%}
+            <div class="document-details">
+              <strong>Technologies:</strong> {{ item.technologies }}
+            </div>
+          {%- endif -%}
+          
+          <div class="document-links">
+            {%- if item.pdf -%}
+              <a href="{{ item.pdf }}" target="_blank" rel="noopener" class="document-link">
+                {%- if item.type == "thesis" -%}Download Thesis{%- else -%}View Report{%- endif -%}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sortButtons = document.querySelectorAll('.sort-btn');
+    const academicList = document.getElementById('academic-list');
+    const academicItems = Array.from(academicList.querySelectorAll('.document-item'));
+    
+    function parseDate(dateStr) {
+      if (!dateStr) return new Date(0);
+      return new Date(dateStr + '-01') || new Date(0);
+    }
+    
+    function sortAcademic(sortType) {
+      academicItems.sort((a, b) => {
+        const aTitle = a.dataset.title;
+        const bTitle = b.dataset.title;
+        const aDate = parseDate(a.dataset.date);
+        const bDate = parseDate(b.dataset.date);
+        
+        switch(sortType) {
+          case 'date-desc': return bDate - aDate;
+          case 'date-asc': return aDate - bDate;
+          case 'title-asc': return aTitle.localeCompare(bTitle);
+          case 'title-desc': return bTitle.localeCompare(aTitle);
+          default: return 0;
+        }
+      });
+      
+      academicList.innerHTML = '';
+      academicItems.forEach(item => academicList.appendChild(item));
+    }
+    
+    sortButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sortButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        sortAcademic(this.dataset.sort);
+      });
+    });
+    
+    sortAcademic('date-desc');
+  });
+  </script>
+{%- endif -%}

@@ -1,25 +1,15 @@
 ---
-title: theses
+title: academic work
 nav: true
 nav_order: 5
+permalink: /theses/
 layout: page
 ---
 
-Welcome to the collection of my academic theses throughout my studies. Below, you will find links to each thesis along with a brief description.
+Welcome to my academic portfolio. This page showcases my research work, including Master's and Bachelor's theses, and professional internship reports. All documents are available for download in PDF format.
 
-
-### [Detection of low-energy tau neutrinos with the ANTARES neutrino telescope - a feasibility study](https://ecap.nat.fau.de/wp-content/uploads/2025/03/MSc_MichailChadolias_ANTARES_TauAppearance.pdf)
-* Master thesis with the neutrino group at ECAP
-* **Year:** 2024  
-
-### [KM3NeT/ORCA - Energy Reconstruction Studies]([#](https://github.com/mchadolias/orca6-energy-reconstruction-studies/blob/main/report/KM3NeT_ORCA_Energy_Reconstruction_Studies_Michael_Chadolias.pdf))
-* Internship report with the astroparticle physics group at INPP NCSR Democritus
-* **Year:** 2022  
-
-### [Monte Carlo Simulation Radiation Transport - Radiation Analysis for the nano-satellite AcubeSAT](https://ikee.lib.auth.gr/record/338695/files/chadolias.pdf)
-* Bachelor thesis with Spacedot at AUTh
-* **Year:** 2022  
+{% include academic_work.liquid %}
 
 ---
 
-Feel free to explore and reach out if you have any questions or feedback!
+*Feel free to explore and reach out if you have any questions or feedback!*

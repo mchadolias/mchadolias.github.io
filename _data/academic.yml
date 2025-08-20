@@ -1,0 +1,27 @@
+# Theses
+- title: "Detection of low-energy tau neutrinos with the ANTARES neutrino telescope - a feasibility study"
+  type: "thesis"
+  subtype: "Master's Thesis"
+  institution: "FAU Erlangen-Nürnberg - Erlangen Centre for Astroparticle Physics"
+  date: "Oct 2025"
+  sort_date: "2025-10"
+  pdf: "/assets/pdf/theses/msc-thesis.pdf"
+  supervisors: "PD. Dr. Thomas Eberl"
+
+- title: "Monte Carlo Simulation Radiation Transport - Radiation Analysis for the nano-satellite AcubeSAT"
+  type: "thesis"
+  subtype: "Bachelor's Thesis"
+  institution: "Aristotle University of Thessaloniki"
+  date: "Mar 2022"
+  sort_date: "2022-3"
+  pdf: "/assets/pdf/theses/bsc-thesis.pdf"
+  supervisors: "Prof. Christos Elefteriadis"
+
+# Internships
+- title: "KM3NeT/ORCA - Energy Reconstruction Studies"
+  type: "internship"
+  company: "NSCR Democritus - Institute for Nuclear and Particle Physics"
+  date: "Fall 2021"
+  sort_date: "2021-11"
+  duration: "3 months"
+  pdf: "/assets/pdf/internships/km3net-athens-report.pdf"
