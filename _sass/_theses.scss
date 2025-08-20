@@ -1,0 +1,129 @@
+.documents-container {
+  margin: 3rem 0;
+}
+
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.sort-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  
+  @media (max-width: 480px) {
+    .sort-btn {
+      flex: 1;
+      min-width: 120px;
+    }
+  }
+}
+
+.sort-btn {
+  padding: 0.5rem 1rem;
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  color: var(--global-text-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  
+  &:hover, &.active {
+    background: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+    border-color: var(--global-theme-color);
+  }
+}
+
+.document-item {
+  background: var(--global-card-bg-color);
+  border-left: 4px solid var(--global-theme-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+  
+  html[data-theme="light"] & {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  html[data-theme="dark"] & {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.document-title {
+  margin: 0 0 1rem 0;
+  color: var(--global-text-color);
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.document-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
+
+.document-type,
+.document-company,
+.document-institution {
+  font-weight: 500;
+}
+
+.document-date {
+  font-style: italic;
+}
+
+.document-description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--global-text-color);
+}
+
+.document-details {
+  margin-bottom: 0.75rem;
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
+
+.document-links {
+  margin-top: 1.5rem;
+}
+
+.document-link {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: var(--global-theme-color);
+  color: var(--global-hover-text-color);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: var(--global-hover-color);
+    transform: translateY(-2px);
+    
+    html[data-theme="light"] & {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    html[data-theme="dark"] & {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
