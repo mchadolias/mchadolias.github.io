@@ -1,0 +1,21 @@
+- name: "KM3NeT Boot Camp 2024"
+  issuer: "Erlangen Centre for Astroparticle Physics (ECAP)"
+  date: "Dec 2024"
+  pdf: "/assets/pdf/certificates/km3net-bootcamp.pdf"
+
+- name: "HSF/IRIS-HEP Training: Analysis Reproducibility"
+  issuer: "HEP Software Foundation & IRIS-HEP"
+  date: "Mar 2025"
+  url: "https://indico.cern.ch/event/1508102/"
+  pdf: "/assets/pdf/certificates/analysis-reproducibility.pdf"
+
+- name: "12th HEP C++ Course and Hands-on Training - The Essentials"
+  issuer: "HEP Software Foundation (HSF)"
+  date: "Mar 2025"
+  url: "https://indico.cern.ch/event/1477096/"
+  pdf: "/assets/pdf/certificates/c++-course.pdf"
+
+- name: "3rd Workshop on Graph Neural Networks for Neutrino Telescope Event Reconstruction"
+  issuer: "University of Copenhagen / GraphNet"
+  date: "May 2023"
+  pdf: "/assets/pdf/certificates/graphnet-3.pdf"
