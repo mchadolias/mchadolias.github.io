@@ -1,0 +1,19 @@
+{%- assign quote_data = include.quote -%}
+
+{%- comment %} Handle preset quotes {% endcomment -%}
+{%- if quote_data.preset and site.data.quotes[quote_data.preset] -%}
+  {%- assign quote_data = site.data.quotes[quote_data.preset] -%}
+{%- endif -%}
+
+{%- if quote_data.text -%}
+<div class="quote-container">
+  <blockquote class="quote-text">
+    "{{ quote_data.text }}"
+    {%- if quote_data.author -%}
+    <footer class="quote-footer">
+      — <cite class="quote-author">{{ quote_data.author }}</cite>{% if quote_data.source %}, <span class="quote-source">{{ quote_data.source }}</span>{% endif %}
+    </footer>
+    {%- endif -%}
+  </blockquote>
+</div>
+{%- endif -%}

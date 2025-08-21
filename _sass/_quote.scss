@@ -1,0 +1,40 @@
+.quote-container {
+  margin: 2rem 0;
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: var(--global-card-bg-color);
+  
+  html[data-theme="light"] & {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  html[data-theme="dark"] & {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--global-text-color);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.quote-footer {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+}
+
+.quote-author {
+  font-style: normal;
+  font-weight: bold;
+  color: var(--global-theme-color);
+}
+
+.quote-source {
+  color: var(--global-text-color-light);
+  font-style: italic;
+}

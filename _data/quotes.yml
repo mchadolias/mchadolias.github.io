@@ -1,0 +1,14 @@
+reggie:
+  text: "If it's not fun, why bother?"
+  author: "Reggie Fils-Aimé"
+  source: "Nintendo"
+
+feynman:
+  text: "If you cannot explain something in simple terms, you don't understand it."
+  author: "Richard Feynman"
+  source: ""
+
+sagan:
+  text: "Somewhere, something incredible is waiting to be known."
+  author: "Carl Sagan"
+  source: ""
