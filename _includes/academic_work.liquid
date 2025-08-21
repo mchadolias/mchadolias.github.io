@@ -13,20 +13,35 @@
     <div class="documents-list" id="academic-list">
       {%- for item in site.data.academic -%}
         <div class="document-item" data-title="{{ item.title | downcase }}" data-date="{{ item.sort_date }}">
+          <!-- Type badge first -->
+          <div class="document-type">
+            {%- if item.type == "thesis" -%}
+              {{ item.subtype }}
+            {%- elsif item.type == "internship" -%}
+              Internship
+            {%- endif -%}
+          </div>
+          
+          <!-- Title second -->
           <h4 class="document-title">{{ item.title }}</h4>
           
           <div class="document-meta">
-            {%- if item.type == "thesis" -%}
-              <span class="document-type">{{ item.subtype }}</span>
-              <span class="document-institution">{{ item.institution }}</span>
-            {%- elsif item.type == "internship" -%}
-              <span class="document-type">Internship</span>
-              <span class="document-company">{{ item.company }}</span>
-            {%- endif -%}
-            <span class="document-date">{{ item.date }}</span>
-            {%- if item.duration -%}
-              <span class="document-duration">({{ item.duration }})</span>
-            {%- endif -%}
+            <!-- Institution/Company -->
+            <div class="meta-item">
+              {%- if item.type == "thesis" -%}
+                <span class="document-institution">{{ item.institution }}</span>
+              {%- elsif item.type == "internship" -%}
+                <span class="document-company">{{ item.company }}</span>
+              {%- endif -%}
+            </div>
+            
+            <!-- Date and Duration -->
+            <div class="meta-item">
+              <span class="document-date">{{ item.date }}</span>
+              {%- if item.duration -%}
+                <span class="document-duration">({{ item.duration }})</span>
+              {%- endif -%}
+            </div>
           </div>
           
           {%- if item.abstract -%}
@@ -54,7 +69,7 @@
           <div class="document-links">
             {%- if item.pdf -%}
               <a href="{{ item.pdf }}" target="_blank" rel="noopener" class="document-link">
-                {%- if item.type == "thesis" -%}Download Thesis{%- else -%}View Report{%- endif -%}
+                {%- if item.type == "thesis" -%}View Thesis{%- else -%}View Report{%- endif -%}
               </a>
             {%- endif -%}
           </div>
