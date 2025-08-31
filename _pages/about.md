@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <p> Graduate Student  | Astroparticle Physicist | Data Science & Machine Learning<p>
+subtitle: <p> MSc. in Physics  | Astroparticle Physicist | Data Science & Machine Learning<p>
 
 profile:
   align: right
@@ -33,10 +33,10 @@ latest_posts:
 
 ## About me
 
-I am a physicist specializing in astroparticle physics, with a focus on neutrino astronomy. My work bridges experimental particle physics, computational modeling, and machine learning, with the goal of uncovering insights into some of the universe’s most elusive phenomena, from neutrinos to potential dark matter signatures.
+<p>I am a physicist specializing in astroparticle physics, with a focus on neutrino astronomy. My work bridges experimental particle physics, computational modeling, and machine learning, with the goal of uncovering insights into some of the universe's most elusive phenomena, from neutrinos to potential dark matter signatures.</p>
 
-I recently graduated with an M.Sc. in Physics from Friedrich-Alexander University Erlangen–Nürnberg, where I worked in the KM3NeT and ANTARES collaborations at the Erlangen Centre for Astroparticle Physics (ECAP). My work included tau neutrino searches, event classification, and detailed Monte Carlo simulation studies, supported by high-performance computing (Slurm, Snakemake) and advanced analysis frameworks (PyTorch, GraphNeT).
+<p>I recently graduated with an M.Sc. in Physics from Friedrich-Alexander University Erlangen–Nürnberg, where I worked in the KM3NeT and ANTARES collaborations at the Erlangen Centre for Astroparticle Physics (ECAP). My work included neutrino oscillation studies, Monte Carlo event generation using workflow managers (Snakemake), and AI applications for event reconstruction and classification (GraphNeT). These studies were only feasible utilizing the high-performance computing clusters at NHR Erlangen and IN2P3 Lyon, offering unique opportunities to gain valuable experience with scientific computing and big data.</p>
 
-My path into experimental physics began during my B.Sc. in Physics at Aristotle University of Thessaloniki, where I joined SpaceDot, a student-led nanosatellite team participating in ESA’s Fly Your Satellite! program. As trajectory subsystem coordinator for the AcubeSAT mission, I modeled orbital radiation environments using OMERE and FASTRAD, which became the basis of my bachelor’s thesis. I later interned at the National Centre for Scientific Research “Demokritos,” contributing to KM3NeT/ORCA data analysis.
+<p>My path into experimental physics began during my B.Sc. in Physics at Aristotle University of Thessaloniki, where I joined SpaceDot, a student-led nanosatellite team participating in ESA's Fly Your Satellite! program. As trajectory subsystem coordinator for the AcubeSAT mission, I modeled orbital radiation environments using OMERE and FASTRAD, which became the basis of my bachelor's thesis. I later interned at the National Centre for Scientific Research Demokritos, contributing to KM3NeT/ORCA by analyzing the reconstruction performance of the then-current 6-string configuration (ORCA6).</p>
 
-Beyond research, I value science communication and mentoring, and I enjoy sharing the excitement of particle physics through public outreach. Outside the lab, I can often be found engaged in a chess match, exploring a new board game, or diving into a Dungeons & Dragons campaign.
+<p>Beyond research, I value science communication and mentoring, and I enjoy sharing the excitement of physics through volunteer outreach. Outside the lab, I can often be found engaged in a chess match, exploring a new board game, or diving into a Dungeons & Dragons campaign.</p>
