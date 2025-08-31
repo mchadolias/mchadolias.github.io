@@ -9,16 +9,9 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-publications",
-          title: "publications",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
-        },{id: "nav-projects",
+  },{id: "nav-projects",
           title: "projects",
-          description: "The page is under construction 🚨 🛠️ ⚠️",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -30,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "nav-academic-work",
-          title: "academic work",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/theses/";
-          },
         },{id: "nav-cv",
           title: "cv",
           description: "",
@@ -44,14 +30,48 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-certifications",
-          title: "certifications",
-          description: "Professional certifications and specialized training programs completed in particle physics, software development, and data analysis.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/certifications/";
-          },
-        },{
+        },{id: "dropdown-theses",
+              title: "theses",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/theses/";
+              },
+            },{id: "dropdown-certifications",
+              title: "certifications",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/certifications/";
+              },
+            },{id: "dropdown-publications",
+              title: "publications",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/publications/";
+              },
+            },{id: "projects-antares-processing-pipeline",
+          title: 'ANTARES Processing Pipeline',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_project_antares/";
+            },},{id: "projects-tau-appearance-measurement",
+          title: 'Tau Appearance Measurement',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project_tau_appearance/";
+            },},{id: "projects-km3net-orca-reconstruction-studies",
+          title: 'KM3NeT/ORCA Reconstruction Studies',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project_orca_energy_studies/";
+            },},{id: "projects-space-environment-analysis-for-acubesat",
+          title: 'Space Environment Analysis for AcubeSAT',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_project_satellite_radiation/";
+            },},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
@@ -71,6 +91,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://inspirehep.net/authors/2685302", "_blank");
+        },
+      },{
+        id: 'social-kaggle',
+        title: 'Kaggle',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.kaggle.com/mchadolias", "_blank");
         },
       },{
         id: 'social-linkedin',
