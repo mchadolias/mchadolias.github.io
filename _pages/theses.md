@@ -1,7 +1,7 @@
 ---
 title: academic work
-nav: true
-nav_order: 5
+nav: false
+#nav_order: 5
 permalink: /theses/
 layout: page
 ---
