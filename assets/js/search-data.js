@@ -9,7 +9,14 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-projects",
+  },{id: "nav-publications",
+          title: "publications",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
           title: "projects",
           description: "",
           section: "Navigation",
@@ -23,35 +30,28 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
+        },{id: "nav-theses",
+          title: "theses",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/theses/";
+          },
+        },{id: "nav-certifications",
+          title: "certifications",
+          description: "Professional certifications and specialized training programs completed in particle physics, software development, and data analysis.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/certifications/";
+          },
         },{id: "nav-cv",
-          title: "cv",
+          title: "CV",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "dropdown-theses",
-              title: "theses",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/theses/";
-              },
-            },{id: "dropdown-certifications",
-              title: "certifications",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/certifications/";
-              },
-            },{id: "dropdown-publications",
-              title: "publications",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/publications/";
-              },
-            },{id: "projects-antares-processing-pipeline",
+        },{id: "projects-antares-processing-pipeline",
           title: 'ANTARES Processing Pipeline',
           description: "",
           section: "Projects",handler: () => {
