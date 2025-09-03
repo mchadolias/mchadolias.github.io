@@ -1,12 +1,12 @@
 ---
-title: academic work
-nav: false
-#nav_order: 5
+title: theses
+nav: true
+nav_order: 5
 permalink: /theses/
 layout: page
 ---
 
-Welcome to my academic portfolio. This page showcases my research work, including Master's and Bachelor's theses, and professional internship reports. All documents are available for download in PDF format.
+Welcome to my academic portfolio. This page showcases my research work, including Master's and Bachelor's theses, and  internship reports. All documents are available for download in PDF format.
 
 {% include academic_work.liquid %}
 

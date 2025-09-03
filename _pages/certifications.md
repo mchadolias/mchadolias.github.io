@@ -1,7 +1,7 @@
 ---
 title: certifications
-nav: false
-nav_order: 7
+nav: true
+nav_order: 6
 permalink: /certifications/
 description: "Professional certifications and specialized training programs completed in particle physics, software development, and data analysis."
 layout: page
