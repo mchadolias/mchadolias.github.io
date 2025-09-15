@@ -51,7 +51,10 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "projects-antares-processing-pipeline",
+        },{id: "news-excited-to-join-the-2025-cohort-of-the-machine-learning-zoomcamp-by-datatalks",
+          title: 'Excited to join the 2025 cohort of the Machine Learning Zoomcamp by DataTalks...',
+          description: "",
+          section: "News",},{id: "projects-antares-processing-pipeline",
           title: 'ANTARES Processing Pipeline',
           description: "",
           section: "Projects",handler: () => {
