@@ -3,13 +3,10 @@ layout: page
 title: projects
 permalink: /projects/
 description: 
-nav: true
-nav_order: 3
+nav: false
 display_categories: [work, fun]
 horizontal: false
 ---
-
-### The page is under construction 🚨 🛠️ ⚠️ 
 
 <!-- pages/projects.md -->
 <div class="projects">
@@ -65,3 +62,7 @@ horizontal: false
   {% endif %}
 {% endif %}
 </div>
+
+---
+
+*This page will be continuously updated as I add different projects from my personal and professional life.*

@@ -3,8 +3,7 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: My GitHub repositories and contributions.
-nav: true
-nav_order: 4
+nav: false
 ---
 
 I'm gradually building my programming skills through personal projects. These repositories reflect my interest in computational physics and data analysis techniques.
