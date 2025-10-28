@@ -1,0 +1,85 @@
+{%- if site.data.presentations -%}
+  <div class="presentations-container">
+    <div class="documents-header">
+      <h2>Presentations & Talks</h2>
+      <div class="sort-controls">
+        <button class="sort-btn active" data-sort="date-desc">Newest First</button>
+        <button class="sort-btn" data-sort="date-asc">Oldest First</button>
+      </div>
+    </div>
+    
+    <div class="documents-list" id="presentations-list">
+      {%- for presentation in site.data.presentations -%}
+        <div class="document-item" data-title="{{ presentation.title | downcase }}" data-date="{{ presentation.sort_date }}">
+          
+          <!-- Title -->
+          <h4 class="document-title">{{ presentation.title }}</h4>
+          
+          <div class="document-meta">
+            <!-- Occasion and Place -->
+            <div class="meta-item">
+              <span class="document-occasion">{{ presentation.occasion }}</span>
+              {%- if presentation.place -%}
+                <span class="document-place"> • {{ presentation.place }}</span>
+              {%- endif -%}
+            </div>
+            
+            <!-- Date -->
+            <div class="meta-item">
+              <span class="document-date">{{ presentation.date }}</span>
+            </div>
+          </div>
+          
+          <!-- PDF Link -->
+          {%- if presentation.pdf -%}
+            <div class="document-links">
+              <a href="{{ presentation.pdf }}" target="_blank" rel="noopener" class="document-link">
+                View Slides
+              </a>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sortButtons = document.querySelectorAll('.sort-btn');
+    const presentationsList = document.getElementById('presentations-list');
+    const presentationItems = Array.from(presentationsList.querySelectorAll('.document-item'));
+    
+    function parseDate(dateStr) {
+      if (!dateStr) return new Date(0);
+      return new Date(dateStr + '-01') || new Date(0);
+    }
+    
+    function sortPresentations(sortType) {
+      presentationItems.sort((a, b) => {
+        const aDate = parseDate(a.dataset.date);
+        const bDate = parseDate(b.dataset.date);
+        
+        switch(sortType) {
+          case 'date-desc': return bDate - aDate;
+          case 'date-asc': return aDate - bDate;
+          default: return 0;
+        }
+      });
+      
+      presentationsList.innerHTML = '';
+      presentationItems.forEach(item => presentationsList.appendChild(item));
+    }
+    
+    sortButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        sortButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        sortPresentations(this.dataset.sort);
+      });
+    });
+    
+    sortPresentations('date-desc');
+  });
+  </script>
+{%- endif -%}
