@@ -4,7 +4,7 @@
     "label": "Astroparticle Physicist",
     "email": "mchadolias@gmail.com",
     "phone": "+30 69 4220 1140",
-    "url":   "https://mchadolias.github.io",
+    "url": "https://mchadolias.github.io",
     "location": {
       "city": "Kavala",
       "countryCode": "GR",
@@ -21,33 +21,32 @@
       }
     ]
   },
-    "education": [
+  "education": [
     {
       "institution": "Friedrich-Alexander-Universität Erlangen-Nurnberg",
       "area": "Physics (Astrophysics and astroparticle physics)",
       "studyType": "M.Sc.",
       "startDate": "2022-04",
       "endDate": "2025-02",
-      "score": "1.6/1.0 (90/100)"
+      "score": "1.6/1.0 (Equivalent: 90/100)"
     },
     {
       "institution": "Aristotle University of Thessaloniki (AUTH)",
       "area": "Physics",
       "studyType": "B.Sc.",
       "startDate": "2018-10",
-      "endDate": "2022-03",
-      "score": "7.84/10.00",
-      "notes": "Top 10% of students, Teaching Assistant for HM 131: Systems Reliability"
+      "endDate": "2022-02",
+      "score": "7.84/10.00 (Top 10%)",
+      "notes": "Teaching Assistant for HM 131: Systems Reliability"
     }
   ],
-  
   "work": [
     {
       "name": "Erlangen Centre for Astroparticle Physics (ECAP)",
       "position": "Master Thesis Student",
       "startDate": "2023-08",
       "endDate": "2024-10",
-      "summary": "Conducted the first feasibility study on tau neutrino appearance using the full duration of ANTARES",
+      "summary": "Conducted first feasibility study on tau neutrino appearance using ANTARES simulated data",
       "highlights": [
         "Developed scalable pipeline to convert 500k+ ANTARES Monte Carlo event files (20% faster processing, 35% storage reduction)",
         "Analyzed 200+ oscillation scenarios with SWIM software",
@@ -66,7 +65,7 @@
       ]
     },
     {
-      "name": "National Centre of Scientific Research Democritus (NCSR)",
+      "name": "National Centre of Scientific Research Demokritos (NCSR)",
       "position": "Undergraduate Research Assistant",
       "startDate": "2021-11",
       "endDate": "2022-01",
@@ -83,7 +82,7 @@
       "position": "Neutrino Group Volunteer",
       "startDate": "2023-10",
       "endDate": "2023-10",
-      "summary": "Presented neutrino detection concepts for the 'Long Night of Science' for FAU"
+      "summary": "Presented neutrino detection concepts to 1100+ visitors at ECAP"
     },
     {
       "organization": "AUTH - CERN Masterclass",
@@ -92,25 +91,22 @@
       "endDate": "2021-03",
       "summary": "Guided high school students through ATLAS event identification exercises"
     },
-        {
-      "organization": "PATh (Physicists of Aristotle  university of THessaloniki)",
-      "position": "Coordintator of volunteers",
+    {
+      "organization": "PATh (Physicists of Aristotle University of Thessaloniki)",
+      "position": "Group Coordinator",
       "startDate": "2017-11",
-      "endDate": "2019-09",
-      "summary": "Organized a confrence for research in undergraduate physics"
+      "endDate": "2019-06",
+      "summary": "Organized conference for undergraduate physics research and facilitated student lab visits"
     },
     {
       "organization": "TedX - Thessaloniki",
       "position": "Volunteer",
-      "startDate":"2017-05",
-      "endDate":"2019-05"
-
+      "startDate": "2017-05",
+      "endDate": "2019-05"
     }
   ],
-
   "awards": [],
   "certificates": [],
-
   "skills": [
     {
       "name": "Programming",
@@ -118,11 +114,11 @@
     },
     {
       "name": "Frameworks & Tools",
-      "keywords": ["ROOT", "SWIM", "TensorFlow", "PyTorch", "GraphNet", "JAX"]
+      "keywords": ["ROOT", "SWIM", "TensorFlow", "PyTorch", "GraphNet", "JAX", "OscProb", "nuSQuIDS"]
     },
     {
       "name": "Computing Methods",
-      "keywords": ["HPC (Slurm, UNIX)", "Snakemake", "Git", "CI/CD", "Docker"]
+      "keywords": ["HPC (SLURM, UNIX)", "Snakemake", "Git", "CI/CD", "Docker", "Apptainer"]
     }
   ],
   "languages": [
@@ -148,8 +144,8 @@
       "name": "Research Interests",
       "keywords": [
         "Astroparticle physics",
+        "Particle Physics",
         "Neutrino physics",
-        "Dark matter",
         "Data science & AI",
         "Statistical & Computational methods"
       ]
@@ -165,12 +161,12 @@
       "reference": "FAU Erlangen-Nürnberg - ECAP"
     },
     {
-      "name": "Prof. Dr. Claudio Copper",
+      "name": "Dr. Rodrigo Gracia-Ruiz",
       "reference": "FAU Erlangen-Nürnberg - ECAP"
     },
     {
-      "name": "Dr. Aikaterini Tzamarioudaki",
-      "reference": "NCSR - Democritus"
+      "name": "Dr. Ekaterini Tzamariudaki",
+      "reference": "NCSR Demokritos"
     }
   ],
   "projects": [

@@ -21,7 +21,7 @@
       institution: Friedrich-Alexander-Universität Erlangen-Nurnberg
       year: 2022-2025
       description:
-        - Grade: 1.6/1.0 (90/100)
+        - Grade: 1.6/1.0 (Equivalent 90/100)
     - title: B.Sc. Physics
       institution: Aristotle University of Thessaloniki (AUTH)
       year: 2018-2022
@@ -36,21 +36,35 @@
       institution: Erlangen Centre for Astroparticle Physics (ECAP)
       year: 2023-2024
       description:
-        - Conducted the first feasibility study on tau neutrino appearance using ANTARES
+        - Conducted first feasibility study on tau neutrino appearance using ANTARES simulated data
         - Developed scalable pipeline (20% faster processing, 35% storage reduction)
         - Analyzed 200+ oscillation scenarios with SWIM software
+        - Compared tau appearance potential between ANTARES and KM3NeT/ORCA
     - title: Graduate Research Assistant
       institution: Erlangen Centre for Astroparticle Physics (ECAP)
       year: 2022-2023
       description:
         - Co-developed Snakemake-based MC production pipeline for ORCA events
         - Achieved 25% CPU workload reduction through SLURM optimization
+        - Performed testing and diagnostics on NHR@FAU cluster
     - title: Undergraduate Research Assistant
-      institution: National Centre of Scientific Research Democritus (NCSR)
+      institution: National Centre of Scientific Research Demokritos (NCSR)
       year: 2021-2022
       description:
-        - Studied reconstruction quality of simulated events for KM3NeT/ORCA6
+        - Studied reconstruction quality of simulated events for KM3NeT/ORCA6 configuration
+        - Analyzed νμ interaction topologies across key metrics
         - Assisted in optical module integration and component testing
+
+- title: Projects
+  type: time_table
+  contents:
+    - title: SpaceDot - AcubeSAT Project
+      institution: Aristotle University of Thessaloniki (AUTH)
+      year: 2019-2021
+      description:
+        - Student-led team selected for ESA's 'Fly Your Satellite' program (3rd iteration)
+        - Led trajectory subsystem and co-authored ESA proposal
+        - Modeled space environment with OMERE and FASTRAD (basis for bachelor's thesis)
 
 - title: Volunteer Experience
   type: time_table
@@ -59,17 +73,21 @@
       institution: Long Night of Sciences, FAU Erlangen
       year: 2023
       description:
-        - Presented neutrino detection concepts
+        - Presented neutrino detection concepts to 1100+ visitors
     - title: Volunteer
       institution: AUTH - CERN Masterclass
       year: 2021
       description:
-        - Guided high school students through ATLAS event identification
-    - title: Coordinator of volunteers
+        - Guided high school students through ATLAS event identification exercises
+    - title: Group Coordinator
       institution: PATh (Physicists of Aristotle University of Thessaloniki)
       year: 2017-2019
       description:
         - Organized conference for undergraduate physics research
+        - Facilitated student visits to research labs
+    - title: Volunteer
+      institution: TedX - Thessaloniki
+      year: 2017-2019
 
 - title: Skills
   type: nested_list
@@ -79,20 +97,10 @@
         - Python, C/C++, Bash, SQL
     - title: Frameworks & Tools
       items:
-        - ROOT, SWIM, TensorFlow, PyTorch, GraphNet, JAX
+        - ROOT, SWIM, TensorFlow, PyTorch, GraphNet, JAX, OscProb, nuSQuIDS
     - title: Computing Methods
       items:
-        - HPC (Slurm, UNIX), Snakemake, Git, CI/CD, Docker
-
-- title: Projects
-  type: time_table
-  contents:
-    - title: SpaceDot - AcubeSAT Project
-      year: 2019-2021
-      description:
-        - Student-led team selected for ESA's 'Fly Your Satellite' program
-        - Led trajectory subsystem and co-authored ESA proposal
-        - Modeled space environment with OMERE and FASTRAD
+        - HPC (SLURM, UNIX), Snakemake, Git, CI/CD, Docker, Apptainer
 
 - title: Academic Interests
   type: nested_list
@@ -101,8 +109,7 @@
       items:
         - Astroparticle physics
         - Neutrino physics
-        - Dark matter
-        - Data science & AI
+        - Data science & Machine Learning
         - Statistical & Computational methods
 
 - title: Other Interests
@@ -114,5 +121,5 @@
   type: list
   contents:
     - PD. Dr. Thomas Eberl (FAU Erlangen-Nürnberg - ECAP)
-    - Prof. Dr. Claudio Copper (FAU Erlangen-Nürnberg - ECAP)
-    - Dr. Aikaterini Tzamarioudaki (NCSR - Democritus)
+    - Dr. Rodrigo Gracia-Ruiz (FAU Erlangen-Nürnberg - ECAP)
+    - Dr. Ekaterini Tzamariudaki (NCSR Demokritos)
