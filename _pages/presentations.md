@@ -6,6 +6,7 @@ permalink: /presentations/
 layout: page
 ---
 
-The page is under construction 🚨 🛠️ ⚠️ 
-
 {% include presentations.liquid %}
+
+---
+The page is under construction 🚨 🛠️ ⚠️ 
