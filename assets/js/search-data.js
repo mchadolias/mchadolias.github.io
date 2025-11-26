@@ -61,26 +61,34 @@ ninja.data = [{
         },{id: "news-excited-to-join-the-2025-cohort-of-the-machine-learning-zoomcamp-by-datatalks",
           title: 'Excited to join the 2025 cohort of the Machine Learning Zoomcamp by DataTalks...',
           description: "",
+          section: "News",},{id: "news-i-ve-submitted-my-midterm-project-for-machine-learning-zoomcamp-the-pulsar-classifier-is-now-live-on-hugging-face",
+          title: 'I’ve submitted my midterm project for Machine Learning Zoomcamp! The pulsar classifier is...',
+          description: "",
           section: "News",},{id: "projects-antares-processing-pipeline",
           title: 'ANTARES Processing Pipeline',
-          description: "",
+          description: "A processing pipeline that converts ANTARES neutrino telescope data (AntDSTs) into a Swim-compatible format. It handles file merging, applies oscillation weights and corrections, and integrates ML-based NNFit reconstructions for analysis.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project_antares/";
             },},{id: "projects-tau-appearance-measurement",
           title: 'Tau Appearance Measurement',
-          description: "",
+          description: "This analysis investigates tau neutrino appearance from atmospheric neutrino oscillations using ANTARES. It evaluates reconstruction algorithms, implements quality cuts, and uses a profile likelihood approach to assess sensitivity to the νμ→ντ oscillation channel.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project_tau_appearance/";
             },},{id: "projects-km3net-orca-reconstruction-studies",
           title: 'KM3NeT/ORCA Reconstruction Studies',
-          description: "",
+          description: "An investigation into energy reconstruction biases for muon neutrinos in the ORCA6 detector. Identified track geometry relative to the sparse detector array as the primary cause of systematic energy miscalibrations.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project_orca_energy_studies/";
-            },},{id: "projects-space-environment-analysis-for-acubesat",
-          title: 'Space Environment Analysis for AcubeSAT',
-          description: "",
+            },},{id: "projects-acubesat-mission",
+          title: 'AcubeSAT Mission',
+          description: "A comprehensive radiation study for the AcubeSAT 3U CubeSat. Quantified flux, Total Ionizing Dose (TID), and shielding effectiveness for critical subsystems to guarantee mission success in Low Earth Orbit.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project_satellite_radiation/";
+            },},{id: "projects-pulsar-star-classification",
+          title: 'Pulsar Star Classification',
+          description: "Machine learning system for classifying pulsar stars from astronomical data using the HTRU2 dataset",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_pulsar_classification/";
             },},{
         id: 'social-email',
         title: 'email',
