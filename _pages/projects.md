@@ -4,7 +4,7 @@ title: projects
 permalink: /projects/
 description: 
 nav: false
-display_categories: [work]
+display_categories: [Physics Research & Computing, ML Applications, Data for fun]
 horizontal: false
 ---
 

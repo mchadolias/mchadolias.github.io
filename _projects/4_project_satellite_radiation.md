@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Space Environment Analysis for AcubeSAT
-description: 
-img: assets/img/projects/acubesat.png
+title: AcubeSAT Mission
+description:  A comprehensive radiation study for the AcubeSAT 3U CubeSat. Quantified flux, Total Ionizing Dose (TID), and shielding effectiveness for critical subsystems to guarantee mission success in Low Earth Orbit.
+img: assets/img/projects/acubesat_logo.png
 importance: 5
-category: work
+category: Physics Research & Computing
 related_publications: false
 ---
 

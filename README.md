@@ -11,6 +11,7 @@ The site is a central hub for my background, research activities, and code.
 * **Publications** — Selected collaboration papers.
 * **Projects** — Highlights of ongoing and personal projects.
 * **Repositories** — My GitHub repositories and contributions.
+* **Presentations** — My presentations in workshops & confrences.
 * **Academic Work** — Master’s & Bachelor’s theses and internship reports (PDF downloads).
 * **CV** — My curriculum vitae with education, experience, skills, and interests.
 * **Certifications** — Workshops & certificates.

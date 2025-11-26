@@ -1,10 +1,11 @@
 ---
 layout: page
 title: ANTARES Processing Pipeline
-description: 
+description:     A processing pipeline that converts ANTARES neutrino telescope data (AntDSTs) into a Swim-compatible format. It handles file merging, applies oscillation weights and corrections, and integrates ML-based NNFit reconstructions for analysis.
 img: assets/img/projects/antares_schematic.jpg
 importance: 1
-category: work
+github: https://github.com/mchadolias/preprocess-antares-dst
+category: Physics Research & Computing
 related_publications: false
 ---
 

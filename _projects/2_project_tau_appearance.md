@@ -1,17 +1,18 @@
 ---
 layout: page
 title: Tau Appearance Measurement
-description: 
+description:     This analysis investigates tau neutrino appearance from atmospheric neutrino oscillations using ANTARES. It evaluates reconstruction algorithms, implements quality cuts, and uses a profile likelihood approach to assess sensitivity to the νμ→ντ oscillation channel.
 img: assets/img/projects/oscillation_numu_nutau.png
 importance: 2
-category: work
+github: https://github.com/mchadolias/tau-appearance-antares
+category: Physics Research & Computing
 related_publications: false
 ---
 
 
 ## Overview
 
-This analysis investigates the feasibility of detecting tau neutrino ($\nu_\tau$) appearance in the ANTARES neutrino telescope using 15 years of data. The study focuses on low-energy (10–100 GeV) up-going neutrinos, where neutrino oscillation effects are most significant.
+This analysis investigates the feasibility of detecting tau neutrino ($\nu_\tau$) appearance in the ANTARES neutrino telescope using 15 years of simulated events. The study focuses on low-energy (10–100 GeV) up-going neutrinos, where neutrino oscillation effects are most significant.
 
 ## Key Components
 
