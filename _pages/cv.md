@@ -1,10 +1,9 @@
 ---
-layout: cv
+layout: default
+title: Curriculum Vitae
 permalink: /cv/
-title: CV
 nav: true
 nav_order: 7
-cv_pdf: academic_cv.pdf # you can also use external links here
-toc:
-  sidebar: left
 ---
+
+{% include cv-switcher/switcher.html %}
