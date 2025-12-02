@@ -2,9 +2,14 @@
 # the commented lines are the default social media links supported by the template
 # the socials will be displayed in the order they are defined here
 
+# academia_edu:  your organization and your username Ex. https://organization.academia.edu/UserName
+#  organization: princeton # your organization as appears in the subdomain
+#  username:  AlbertEinstein # your username
 # acm_id: # your dl.acm.org/profile/id
+# arxiv_id: # your arXiv author ID
 # blogger_url: # your blogger URL
 # bluesky_url: # your bluesky URL
+cv_pdf: /assets/pdf/academic_cv.pdf # path to your CV PDF file
 # dblp_url: # your DBLP profile url
 # discord_id: # your discord id (18-digit unique numerical identifier)
 email: mchadolias@gmail.com # your email address
@@ -30,8 +35,8 @@ orcid_id: 0009-0006-0373-049X # your ORCID ID
 # publons_id: # your ID on Publons
 # quora_username: # your Quora username
 # research_gate_profile: # your profile on ResearchGate
-# rss_icon:  # comment this line to hide the RSS icon
-# scholar_userid:  # your Google Scholar ID
+#rss_icon: true # comment this line to hide the RSS icon
+#scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
 # scopus_id: # your profile on Scopus
 # semanticscholar_id: # your Semantic Scholar ID
 # spotify_id: # your spotify id
@@ -47,7 +52,3 @@ orcid_id: 0009-0006-0373-049X # your ORCID ID
 # x_username: # your X handle
 # youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 # zotero_username: # your zotero username
-#custom_social: # can be any name here other than the ones already defined above
-#  logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png # can be png, svg, jpg
-#  title: Custom Social
-#  url: https://www.alberteinstein.com/
