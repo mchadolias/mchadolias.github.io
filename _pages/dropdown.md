@@ -8,6 +8,6 @@ children:
   - title: projects
     permalink: /projects/
   - title: divider
-  - title: repositories
+  - title: github repository
     permalink: /repositories/
 ---
