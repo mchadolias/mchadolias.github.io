@@ -1,0 +1,249 @@
+/*******************************************************************************
+ * GitHub Stats – Layout & Components (Tokyonight-compatible)
+ * NOTE: Visual theming of .tokyo-box lives in _themes.scss
+ ******************************************************************************/
+
+/* Layout constants */
+:root {
+  --gh-border-radius: 12px;
+  --gh-transition-time: 0.22s;
+}
+
+/* ============================================================
+   Wrapper & Sections
+============================================================ */
+
+.github-stats-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 25px 0;
+}
+
+/* Section headings */
+.stats-header,
+.tokyo-box-title {  /* ensure heading hierarchy looks unified */
+  font-weight: 600;
+}
+
+.stats-header {
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+  text-align: left;
+  color: var(--tn-accent-blue);
+}
+
+.stats-sub {
+  font-size: 0.88rem;
+  opacity: 0.65;
+  margin-bottom: 16px;
+  text-align: left;
+  color: var(--tn-text);
+}
+
+/* Small user layout wrapper (profile + stats side by side) */
+.github-user-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 175px;
+}
+
+@media (max-width: 992px) {
+  .github-user-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ============================================================
+   Fade-in animation
+============================================================ */
+.fade-in {
+  opacity: 0;
+  animation: ghFadeIn 0.8s ease forwards;
+}
+
+@keyframes ghFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   Hover cards (scale effect wrapper)
+============================================================ */
+
+.hover-card {
+  transition: transform var(--gh-transition-time) ease,
+              box-shadow var(--gh-transition-time) ease;
+  border-radius: var(--gh-border-radius);
+}
+
+.hover-card:hover {
+  transform: scale(1.015);
+}
+
+/* ============================================================
+   Stats Grid (for summary cards)
+============================================================ */
+
+.stats-grid {
+  display: grid;
+  gap: 26px;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* When used in summary section with 2 cards full-width */
+.stats-grid--wide {
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 32px;
+}
+
+/* ============================================================
+   Tokyonight boxes – UNIFORM HEIGHT + TEXT TRUNCATION
+   (Layout-only rules; visuals live in _themes.scss)
+============================================================ */
+
+.tokyo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Make cards uniform in the GitHub sections */
+  min-height: 260px;
+  max-height: 260px;
+
+  overflow: hidden;
+  padding: 18px 20px;
+}
+
+/* Titles: keep consistent vertical footprint */
+.tokyo-box-title {
+  min-height: 28px;
+}
+
+/* Clamp text in items for consistency */
+.tokyo-box-item {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;          /* limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* In some places we want “body text” style inside a box without clamping */
+.tokyo-box-item--free {
+  -webkit-line-clamp: initial;
+  -webkit-box-orient: initial;
+  overflow: visible;
+}
+
+/* ============================================================
+   User Profile / Stats Specific Layout Helpers
+============================================================ */
+
+/* These classes can be used if you still wrap content in them, but
+   they do not override colours – they rely on .tokyo-box visuals. */
+
+.user-box,
+.user-stats-box {
+  width: 100%;
+}
+
+/* Streak box centering */
+.centered-narrow-box {
+  width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+/* ============================================================
+   Theme Toggle Button (if used)
+============================================================ */
+
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--tn-bg-secondary);
+  color: var(--tn-text);
+  font-size: 0.9rem;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.04);
+}
+
+
+.meta-line {
+  margin: 2px 0;
+  line-height: 1.25;
+}
+
+
+/*******************************************************************************
+* GitHub Summary / Stats – Tokyonight Enhanced
+*******************************************************************************/
+
+.github-stats-wrapper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+/* ============================================================
+   SUMMARY CARD RESTORED SIZING
+============================================================ */
+.github-summary-card {
+  padding: 28px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.28) !important;
+  min-height: 340px;
+  background: var(--tn-bg-secondary);
+}
+
+.github-summary-card .tokyo-box-title {
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+  color: var(--tn-accent-blue);
+}
+
+.github-summary-card .tokyo-box-item {
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+
+/* Space around SVG cards */
+.github-summary-card img {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+/* Grid layout */
+.stats-grid {
+  display: grid;
+  gap: 32px;
+}
+
+
+/* Hover animation */
+.hover-card {
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.hover-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.4);
+}

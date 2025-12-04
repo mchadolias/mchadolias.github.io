@@ -13,6 +13,7 @@
 .certifications-header h2 {
   margin: 0;
   flex-shrink: 0;
+  color: var(--tn-text);
 }
 
 /* ===== Shared Sort Controls ===== */
@@ -24,35 +25,36 @@
 
 .sort-btn {
   padding: 0.4rem 0.8rem;
-  background: var(--global-card-bg-color);
+  background: var(--tn-bg-secondary);
   border: 1px solid var(--global-divider-color);
-  color: var(--global-text-color);
-  border-radius: 4px;
+  color: var(--tn-text);
+  border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
   transition: all 0.2s ease;
 }
 
 .sort-btn:hover {
-  background: var(--global-theme-color);
-  color: var(--global-hover-text-color);
-  border-color: var(--global-theme-color);
+  background: var(--tn-accent-blue);
+  color: #fff;
+  border-color: var(--tn-accent-blue);
 }
 
 .sort-btn.active {
-  background: var(--global-theme-color);
-  color: var(--global-hover-text-color);
-  border-color: var(--global-theme-color);
+  background: var(--tn-accent-blue);
+  color: #fff;
+  border-color: var(--tn-accent-blue);
 }
 
 /* ===== Shared Item Styles ===== */
 .document-item,
 .certification-item {
-  background: var(--global-card-bg-color);
-  border-left: 4px solid var(--global-theme-color);
+  background: var(--tn-bg-secondary);
+  border-left: 4px solid var(--tn-accent-blue);
   padding: 1.6rem;
   margin-bottom: 1.6rem;
-  border-radius: 4px;
+  border-radius: 6px;
+  color: var(--tn-text);
 }
 
 html[data-theme="light"] .document-item,
@@ -68,7 +70,7 @@ html[data-theme="dark"] .certification-item {
 /* ===== Document Specific Styles ===== */
 .document-title {
   margin: 0 0 0.8rem 0;
-  color: var(--global-text-color);
+  color: var(--tn-accent-blue);
   font-size: 1.4rem;
   line-height: 1.4;
 }
@@ -91,7 +93,7 @@ html[data-theme="dark"] .certification-item {
 .document-company {
   display: block;
   font-weight: 600;
-  color: var(--global-text-color);
+  color: var(--tn-text);
   font-size: 1.05rem;
   margin-bottom: 0.16rem;
 }
@@ -118,16 +120,16 @@ html[data-theme="dark"] .certification-item {
 .document-link {
   display: inline-block;
   padding: 0.48rem 1.2rem;
-  background: var(--global-theme-color);
-  color: var(--global-hover-text-color);
+  background: var(--tn-accent-blue);
+  color: #fff;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .document-link:hover {
-  background: var(--global-hover-color);
+  background: var(--tn-accent-green);
   transform: translateY(-2px);
 }
 
@@ -146,7 +148,7 @@ html[data-theme="dark"] .document-link:hover {
 
 .certification-title {
   margin: 0 0 0.8rem 0;
-  color: var(--global-text-color);
+  color: var(--tn-accent-blue);
   font-size: 1.3rem;
   line-height: 1.4;
 }
@@ -158,7 +160,7 @@ html[data-theme="dark"] .document-link:hover {
 .certification-issuer {
   display: block;
   font-weight: 600;
-  color: var(--global-text-color);
+  color: var(--tn-text);
   margin-bottom: 0.32rem;
   font-size: 1.05rem;
   line-height: 1.4;
@@ -181,16 +183,16 @@ html[data-theme="dark"] .document-link:hover {
 .certification-link {
   display: inline-block;
   padding: 0.48rem 1.2rem;
-  background: var(--global-theme-color);
-  color: var(--global-hover-text-color);
+  background: var(--tn-accent-blue);
+  color: #fff;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .certification-link:hover {
-  background: var(--global-hover-color);
+  background: var(--tn-accent-green);
   transform: translateY(-2px);
 }
 
