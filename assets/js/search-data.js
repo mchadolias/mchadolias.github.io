@@ -16,8 +16,8 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/projects/";
               },
-            },{id: "dropdown-repositories",
-              title: "repositories",
+            },{id: "dropdown-github-repository",
+              title: "github repository",
               description: "",
               section: "Dropdown",
               handler: () => {
@@ -51,8 +51,8 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/certifications/";
           },
-        },{id: "nav-cv",
-          title: "CV",
+        },{id: "nav-curriculum-vitae",
+          title: "Curriculum Vitae",
           description: "",
           section: "Navigation",
           handler: () => {
@@ -90,6 +90,13 @@ ninja.data = [{
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_pulsar_classification/";
             },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/academic_cv.pdf", "_blank");
+        },
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
