@@ -10,44 +10,38 @@ I'm gradually building my programming skills through personal projects. These re
 
 {% if site.data.repositories.github_users %}
 
+## GitHub Users
 
-## GitHub users
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %}
-    {% include repository/repo_user.liquid username=user %}
-    {% include repository/repo_languages.liquid username=user %}
-  {% endfor %}
-</div>
-
----
-
-{% if site.repo_trophies.enabled %}
 {% for user in site.data.repositories.github_users %}
-{% if site.data.repositories.github_users.size > 1 %}
 
-  <h4>{{ user }}</h4>
-  {% endif %}
-  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
+<div class="github-user-grid" style="display:grid; gap:100px; grid-template-columns: 1fr 1fr;">
+
+  <!-- LEFT: PROFILE INFO -->
+  <div>
+    {% include repository/repo_user_profile.liquid username=user %}
   </div>
 
----
+  <!-- RIGHT: USER ACCOUNT STATS -->
+  <div>
+    {% include repository/repo_user_stats.liquid username=user %}
+  </div>
+
+</div>
+
+<!-- STREAK -->
+<div style="margin-top:20px; width:600px; margin-left:auto; margin-right:auto;">
+  {% include repository/repo_user_streak.liquid username=user %}
+</div>
+
+<!-- SUMMARY SECTION -->
+<div style="margin-top:40px;">
+  {% include repository/repo_user_summary.liquid username=user %}
+</div>
+
+<hr style="margin:60px 0;">
 
 {% endfor %}
 {% endif %}
-{% endif %}
-
-{% if site.data.repositories.github_repos %}
-
-## GitHub Repositories
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.liquid repository=repo %}
-  {% endfor %}
-</div>
-{% endif %}
 
 ---
-*This is an ongoing learning process - I welcome feedback and collaboration opportunities on any of these projects.*
+*This is an ongoing learning process — I welcome feedback and collaboration opportunities on any of these projects.*

@@ -10,3 +10,11 @@ github_repos:
   - mchadolias/detect-pulsar-api
   - mchadolias/miniboone-classifier
 
+exclude_github:
+  - mchadolias.github.io
+  - al-folio
+  - graphnet
+  - virtual-pipelines-eventselection 
+  - analysis-reproducibility-workshop2025
+  - preprocess-antares-dst
+
