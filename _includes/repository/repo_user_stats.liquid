@@ -1,0 +1,92 @@
+{% assign username = include.username %}
+
+<div id="user-stats-{{ username }}" class="tokyo-box fade-in">
+  <div class="tokyo-skeleton" style="height:120px; width:100%;"></div>
+</div>
+
+<script>
+Promise.all([
+  fetch("https://api.github.com/users/{{ username }}").then(r => r.json()),
+  fetch("https://api.github.com/users/{{ username }}/repos?per_page=100").then(r => r.json()),
+  fetch("https://api.github.com/users/{{ username }}/events?per_page=100").then(r => r.json())
+]).then(([user, repos, events]) => {
+
+  if (!user || user.message === "Not Found") {
+    document.getElementById("user-stats-{{ username }}").innerHTML = `
+      <div class="tokyo-box-title">GitHub User Not Found</div>
+      <div class="tokyo-box-item">⚠ The username <strong>{{ username }}</strong> does not exist.</div>
+    `;
+    return;
+  }
+
+  /* --------------------------------------------------
+     1. PUBLIC REPOS
+     -------------------------------------------------- */
+  const publicRepos = user.public_repos || 0;
+
+  /* --------------------------------------------------
+     2. PRIMARY LANGUAGE
+     -------------------------------------------------- */
+  const langCount = {};
+  repos.forEach(repo => {
+    if (repo.language)
+      langCount[repo.language] = (langCount[repo.language] || 0) + 1;
+  });
+
+  const primaryLang = Object.keys(langCount).length
+    ? Object.entries(langCount).sort((a,b)=>b[1]-a[1])[0][0]
+    : "—";
+
+  /* --------------------------------------------------
+     3. RECENT CONTRIBUTIONS (Commits / PRs / Issues)
+     -------------------------------------------------- */
+  let recentContrib = 0;
+  events.forEach(e => {
+    if (e.type === "PushEvent") recentContrib += e.payload.size || 0;
+    if (e.type === "IssuesEvent" || e.type === "PullRequestEvent") recentContrib += 1;
+  });
+
+  /* --------------------------------------------------
+     4. ACTIVE PROJECTS (90 days)
+     -------------------------------------------------- */
+  const now = new Date();
+  const activeProjects = repos.filter(repo => {
+    const lastPush = new Date(repo.pushed_at);
+    return (now - lastPush) / (1000*60*60*24) <= 90;
+  }).length;
+
+  /* --------------------------------------------------
+     5. LAST ACTIVE (DD-MM-YYYY)
+     -------------------------------------------------- */
+  let lastActiveDate = "—";
+  if (events?.length) {
+    const d = new Date(events[0].created_at);
+    lastActiveDate = d.toLocaleDateString("en-GB");
+  }
+
+  /* --------------------------------------------------
+     6. OPEN ISSUES (TOTAL)
+     -------------------------------------------------- */
+  const openIssues = repos.reduce((acc, repo) => acc + (repo.open_issues_count || 0), 0);
+
+  /* --------------------------------------------------
+     Inject HTML (Tokyonight Styled)
+     -------------------------------------------------- */
+  document.getElementById("user-stats-{{ username }}").innerHTML = `
+    <div class="tokyo-box-title">Developer Summary</div>
+
+    <div class="tokyo-box-item">📦 Public Repositories: <strong>${publicRepos}</strong></div>
+    <div class="tokyo-box-item">🛠️ Primary Language: <strong>${primaryLang}</strong></div>
+    <div class="tokyo-box-item">🔄 Recent Contributions: <strong>${recentContrib}</strong></div>
+    <div class="tokyo-box-item">📁 Active Projects (90 days): <strong>${activeProjects}</strong></div>
+    <div class="tokyo-box-item">🕒 Last Active: <strong>${lastActiveDate}</strong></div>
+    <div class="tokyo-box-item">❗ Open Issues Total: <strong>${openIssues}</strong></div>
+  `;
+})
+.catch(err => {
+  document.getElementById("user-stats-{{ username }}").innerHTML = `
+    <div class="tokyo-box-title">Error Loading GitHub Stats</div>
+    <div class="tokyo-box-item">⚠ API limit reached or network problem.</div>
+  `;
+});
+</script>

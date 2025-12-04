@@ -1,0 +1,115 @@
+{% comment %}
+  GitHub Summary Section (Tokyonight Compatible, Restored Sizing)
+{% endcomment %}
+
+{% assign username = include.username %}
+{% assign theme_light = "default" %}
+{% assign theme_dark  = site.repo_theme_dark | default: "dark" %}
+
+{%- comment -%}
+  Pull excluded repos from YAML file
+{%- endcomment -%}
+
+{% assign yaml_excluded = site.data.repositories.excluded_repos | default: "" %}
+{% assign include_excluded = include.exclude | default: "" %}
+
+{%- comment -%}
+  Build exclusion list
+{%- endcomment -%}
+
+{% assign exclude_param = "" %}
+
+{% if yaml_excluded != "" %}
+  {% for repo in yaml_excluded %}
+    {% assign trimmed = repo | strip %}
+    {% if trimmed != "" %}
+      {% if exclude_param == "" %}
+        {% assign exclude_param = trimmed %}
+      {% else %}
+        {% assign exclude_param = exclude_param | append: "," | append: trimmed %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if include_excluded != "" %}
+  {% assign list = include_excluded | split: "," %}
+  {% for item in list %}
+    {% assign trimmed = item | strip %}
+    {% if trimmed != "" %}
+      {% if exclude_param == "" %}
+        {% assign exclude_param = trimmed %}
+      {% else %}
+        {% assign exclude_param = exclude_param | append: "," | append: trimmed %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+
+
+<div class="github-stats-wrapper fade-in" style="max-width:1400px; margin:auto;">
+
+
+  <!-- ===================================================== -->
+  <!-- 1. FULL-WIDTH COMMIT DISTRIBUTION -->
+  <!-- ===================================================== -->
+  <div class="hover-card tokyo-box tokyo-box--auto github-summary-card">
+    <div class="tokyo-box-title">Commit Activity Over Time</div>
+    <div class="tokyo-box-item">Yearly distribution of contributions</div>
+
+    <img class="only-dark w-100"
+      src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{ username }}&theme={{ theme_dark }}"
+      alt="{{ username }} commit distribution">
+
+    <img class="only-light w-100"
+      src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username={{ username }}&theme={{ theme_light }}"
+      alt="{{ username }} commit distribution">
+  </div>
+
+
+
+  <!-- ===================================================== -->
+  <!-- 2. SUMMARY GRID -->
+  <!-- ===================================================== -->
+
+  <div class="stats-grid fade-in" style="margin-top:30px; gap:32px; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));">
+
+
+    <!-- ===================================================== -->
+    <!-- LANGUAGES ACROSS PROJECTS -->
+    <!-- ===================================================== -->
+    <div class="hover-card tokyo-box tokyo-box--auto github-summary-card">
+      <div class="tokyo-box-title">Languages Across Projects</div>
+      <div class="tokyo-box-item">Repository language distribution</div>
+
+      <img class="only-dark w-100"
+        src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username={{ username }}&theme={{ theme_dark }}&exclude={{ exclude_param }}"
+        alt="{{ username }} languages">
+
+      <img class="only-light w-100"
+        src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username={{ username }}&theme={{ theme_light }}&exclude=preprocess-antares-dst,tau-appearance-antares"
+        alt="{{ username }} languages">
+    </div>
+
+
+
+    <!-- ===================================================== -->
+    <!-- PROFILE OVERVIEW -->
+    <!-- ===================================================== -->
+    <div class="hover-card tokyo-box tokyo-box--auto github-summary-card">
+      <div class="tokyo-box-title">Profile Overview</div>
+      <div class="tokyo-box-item">Stars, followers, and contribution metrics</div>
+
+      <img class="only-dark w-100"
+        src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ username }}&theme={{ theme_dark }}"
+        alt="{{ username }} overview">
+
+      <img class="only-light w-100"
+        src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ username }}&theme={{ theme_light }}"
+        alt="{{ username }} overview">
+    </div>
+
+  </div>
+
+</div>
