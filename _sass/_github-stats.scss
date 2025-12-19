@@ -21,7 +21,8 @@
 
 /* Section headings */
 .stats-header,
-.tokyo-box-title {  /* ensure heading hierarchy looks unified */
+.tokyo-box-title {
+  /* ensure heading hierarchy looks unified */
   font-weight: 600;
 }
 
@@ -63,8 +64,14 @@
 }
 
 @keyframes ghFadeIn {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================================================
@@ -72,8 +79,9 @@
 ============================================================ */
 
 .hover-card {
-  transition: transform var(--gh-transition-time) ease,
-              box-shadow var(--gh-transition-time) ease;
+  transition:
+    transform var(--gh-transition-time) ease,
+    box-shadow var(--gh-transition-time) ease;
   border-radius: var(--gh-border-radius);
 }
 
@@ -92,11 +100,15 @@
 }
 
 @media (min-width: 768px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 1200px) {
-  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* When used in summary section with 2 cards full-width */
@@ -131,7 +143,7 @@
 /* Clamp text in items for consistency */
 .tokyo-box-item {
   display: -webkit-box;
-  -webkit-line-clamp: 3;          /* limit to 3 lines */
+  -webkit-line-clamp: 3; /* limit to 3 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -178,19 +190,17 @@
   color: var(--tn-text);
   font-size: 0.9rem;
   z-index: 9999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .theme-toggle-btn:hover {
   transform: scale(1.04);
 }
 
-
 .meta-line {
   margin: 2px 0;
   line-height: 1.25;
 }
-
 
 /*******************************************************************************
 * GitHub Summary / Stats – Tokyonight Enhanced
@@ -208,7 +218,7 @@
 .github-summary-card {
   padding: 28px !important;
   border-radius: 14px !important;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.28) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28) !important;
   min-height: 340px;
   background: var(--tn-bg-secondary);
 }
@@ -237,13 +247,14 @@
   gap: 32px;
 }
 
-
 /* Hover animation */
 .hover-card {
-  transition: transform .22s ease, box-shadow .22s ease;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
 .hover-card:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.4);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
 }

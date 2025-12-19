@@ -44,4 +44,5 @@ I'm gradually building my programming skills through personal projects. These re
 {% endif %}
 
 ---
-*This is an ongoing learning process — I welcome feedback and collaboration opportunities on any of these projects.*
+
+_This is an ongoing learning process — I welcome feedback and collaboration opportunities on any of these projects._

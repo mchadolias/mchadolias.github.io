@@ -1,40 +1,30 @@
-<link rel="stylesheet" href="{{ 'assets/css/cv-switcher.css' | relative_url }}">
+<link rel="stylesheet" href="{{ 'assets/css/cv-switcher.css' | relative_url }}" />
 
 <div class="cv-header documents-header">
   <h1 class="cv-title">Curriculum Vitae</h1>
 
   <div class="cv-header-buttons">
-    <button id="academic-btn" class="sort-btn active" onclick="showCV('academic')">
-      📘 Academic CV
-    </button>
+    <button id="academic-btn" class="sort-btn active" onclick="showCV('academic')">📘 Academic CV</button>
 
-    <button id="industry-btn" class="sort-btn" onclick="showCV('industry')">
-      💼 Industry CV
-    </button>
+    <button id="industry-btn" class="sort-btn" onclick="showCV('industry')">💼 Industry CV</button>
 
-    <a id="download-btn"
-       href="{{ 'assets/pdf/academic_cv.pdf' | relative_url }}"
-       target="_blank"
-       class="document-link"
-       style="padding: 0.48rem 1.1rem;">
-       ⬇️ Download Academic CV
+    <a
+      id="download-btn"
+      href="{{ 'assets/pdf/academic_cv.pdf' | relative_url }}"
+      target="_blank"
+      class="document-link"
+      style="padding: 0.48rem 1.1rem"
+    >
+      ⬇️ Download Academic CV
     </a>
   </div>
 </div>
 
 <div class="cv-switcher-preview card">
-  <embed
-    id="cv-embed"
-    src="{{ 'assets/pdf/academic_cv.pdf' | relative_url }}"
-    type="application/pdf"
-    width="100%"
-    height="900px"
-  />
+  <embed id="cv-embed" src="{{ 'assets/pdf/academic_cv.pdf' | relative_url }}" type="application/pdf" width="100%" height="900px" />
 </div>
 
-<div class="cv-switcher-updated">
-  Last updated: {{ site.time | date: "%B %Y" }}
-</div>
+<div class="cv-switcher-updated">Last updated: {{ site.time | date: "%B %Y" }}</div>
 
 <script>
   const academicCV = "{{ 'assets/pdf/academic_cv.pdf' | relative_url }}";

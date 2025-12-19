@@ -13,7 +13,7 @@ related_publications: false
 
 A comprehensive machine learning system for classifying pulsar stars from astronomical data. This project demonstrates a complete ML pipeline from data acquisition to production deployment, using the HTRU2 dataset to distinguish rare pulsar signals from noise with high accuracy.
 
-**Live Demo**: [ https://huggingface.co/spaces/mchadolias/pulsar-classification-htru2]( https://huggingface.co/spaces/mchadolias/pulsar-classification-htru2)
+**Live Demo**: [ https://huggingface.co/spaces/mchadolias/pulsar-classification-htru2](https://huggingface.co/spaces/mchadolias/pulsar-classification-htru2)
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
@@ -35,6 +35,7 @@ A comprehensive machine learning system for classifying pulsar stars from astron
 ### 📊 Model Performance
 
 **Best Model**: XGBoost Classifier
+
 - **ROC-AUC**: 0.9768
 - **Recall**: 86.3%
 - **Precision**: 92.5%
@@ -74,7 +75,6 @@ The model successfully handles significant class imbalance (9.16% pulsars) while
 3. **dm_std**: 0.0678 (DM-SNR Curve Standard Deviation)
 4. **ip_std**: 0.0412 (Integrated Profile Standard Deviation)
 5. **ip_mean**: 0.0298 (Integrated Profile Mean)
-
 
 ## Quick Start
 
@@ -138,8 +138,6 @@ print(response.json())
     </div>
 </div>
 
-
-
 ## Business Impact
 
 This system addresses a real astronomical challenge by automating the identification of pulsar stars, which:
@@ -159,9 +157,8 @@ This system addresses a real astronomical challenge by automating the identifica
 
 ✅ **Completed**: Data pipeline, model training, API development  
 ✅ **Deployed**: Production API on Fly.io  
-✅ **Documented**: Comprehensive README and examples  
+✅ **Documented**: Comprehensive README and examples
 
 ---
 
-*This project demonstrates end-to-end machine learning capabilities from research to production deployment. The successful classification of pulsar stars showcases practical application of ML in scientific domains.*
-
+_This project demonstrates end-to-end machine learning capabilities from research to production deployment. The successful classification of pulsar stars showcases practical application of ML in scientific domains._

@@ -9,33 +9,29 @@
         <button class="sort-btn" data-sort="name-desc">Z-A</button>
       </div>
     </div>
-    
+
     <div class="certifications-list" id="certifications-list">
       {%- for cert in site.data.certifications -%}
         <div class="certification-item" data-name="{{ cert.name | downcase }}" data-date="{{ cert.date | date: '%Y-%m' }}">
           <h4 class="certification-title">{{ cert.name }}</h4>
-          
+
           <div class="certification-details">
             {%- if cert.issuer -%}
               <div class="certification-issuer">{{ cert.issuer }}</div>
             {%- endif -%}
-            
+
             {%- if cert.date -%}
               <div class="certification-date">Issued: {{ cert.date }}</div>
             {%- endif -%}
           </div>
-          
+
           <div class="certification-links">
             {%- if cert.url -%}
-              <a href="{{ cert.url }}" target="_blank" rel="noopener" class="certification-link">
-                Event Information
-              </a>
+              <a href="{{ cert.url }}" target="_blank" rel="noopener" class="certification-link"> Event Information </a>
             {%- endif -%}
-            
+
             {%- if cert.pdf -%}
-              <a href="{{ cert.pdf }}" target="_blank" rel="noopener" class="certification-link">
-                View Certificate (PDF)
-              </a>
+              <a href="{{ cert.pdf }}" target="_blank" rel="noopener" class="certification-link"> View Certificate (PDF) </a>
             {%- endif -%}
           </div>
         </div>
@@ -44,71 +40,81 @@
   </div>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const sortButtons = document.querySelectorAll('.sort-btn');
-    const certificationsList = document.getElementById('certifications-list');
-    const certificationItems = Array.from(certificationsList.querySelectorAll('.certification-item'));
-    
-    // Parse date strings into sortable format
-    function parseDate(dateStr) {
-      if (!dateStr) return new Date(0); // Default to very old date if missing
-      
-      const months = {
-        'jan': '01', 'feb': '02', 'mar': '03', 'apr': '04', 'may': '05', 'jun': '06',
-        'jul': '07', 'aug': '08', 'sep': '09', 'oct': '10', 'nov': '11', 'dec': '12'
-      };
-      
-      // Handle formats like "Dec 2024", "May 2023"
-      const parts = dateStr.toLowerCase().split(' ');
-      if (parts.length === 2 && months[parts[0]] && parts[1].length === 4) {
-        return new Date(`${parts[1]}-${months[parts[0]]}-01`);
-      }
-      
-      // Handle other formats or return default
-      return new Date(dateStr) || new Date(0);
-    }
-    
-    // Sort function
-    function sortCertifications(sortType) {
-      certificationItems.sort((a, b) => {
-        const aName = a.dataset.name;
-        const bName = b.dataset.name;
-        const aDate = parseDate(a.dataset.date);
-        const bDate = parseDate(b.dataset.date);
-        
-        switch(sortType) {
-          case 'date-desc':
-            return bDate - aDate; // Newest first
-          case 'date-asc':
-            return aDate - bDate; // Oldest first
-          case 'name-asc':
-            return aName.localeCompare(bName); // A-Z
-          case 'name-desc':
-            return bName.localeCompare(aName); // Z-A
-          default:
-            return 0;
+    document.addEventListener('DOMContentLoaded', function () {
+      const sortButtons = document.querySelectorAll('.sort-btn');
+      const certificationsList = document.getElementById('certifications-list');
+      const certificationItems = Array.from(certificationsList.querySelectorAll('.certification-item'));
+
+      // Parse date strings into sortable format
+      function parseDate(dateStr) {
+        if (!dateStr) return new Date(0); // Default to very old date if missing
+
+        const months = {
+          jan: '01',
+          feb: '02',
+          mar: '03',
+          apr: '04',
+          may: '05',
+          jun: '06',
+          jul: '07',
+          aug: '08',
+          sep: '09',
+          oct: '10',
+          nov: '11',
+          dec: '12',
+        };
+
+        // Handle formats like "Dec 2024", "May 2023"
+        const parts = dateStr.toLowerCase().split(' ');
+        if (parts.length === 2 && months[parts[0]] && parts[1].length === 4) {
+          return new Date(`${parts[1]}-${months[parts[0]]}-01`);
         }
+
+        // Handle other formats or return default
+        return new Date(dateStr) || new Date(0);
+      }
+
+      // Sort function
+      function sortCertifications(sortType) {
+        certificationItems.sort((a, b) => {
+          const aName = a.dataset.name;
+          const bName = b.dataset.name;
+          const aDate = parseDate(a.dataset.date);
+          const bDate = parseDate(b.dataset.date);
+
+          switch (sortType) {
+            case 'date-desc':
+              return bDate - aDate; // Newest first
+            case 'date-asc':
+              return aDate - bDate; // Oldest first
+            case 'name-asc':
+              return aName.localeCompare(bName); // A-Z
+            case 'name-desc':
+              return bName.localeCompare(aName); // Z-A
+            default:
+              return 0;
+          }
+        });
+
+        // Clear and re-append sorted items
+        certificationsList.innerHTML = '';
+        certificationItems.forEach((item) => certificationsList.appendChild(item));
+      }
+
+      // Event listeners for sort buttons
+      sortButtons.forEach((button) => {
+        button.addEventListener('click', function () {
+          // Remove active class from all buttons
+          sortButtons.forEach((btn) => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          // Sort the list
+          sortCertifications(this.dataset.sort);
+        });
       });
-      
-      // Clear and re-append sorted items
-      certificationsList.innerHTML = '';
-      certificationItems.forEach(item => certificationsList.appendChild(item));
-    }
-    
-    // Event listeners for sort buttons
-    sortButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Remove active class from all buttons
-        sortButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        this.classList.add('active');
-        // Sort the list
-        sortCertifications(this.dataset.sort);
-      });
+
+      // Initial sort (newest first)
+      sortCertifications('date-desc');
     });
-    
-    // Initial sort (newest first)
-    sortCertifications('date-desc');
-  });
   </script>
 {%- endif -%}

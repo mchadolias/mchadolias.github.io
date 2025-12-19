@@ -1,7 +1,7 @@
 ---
 layout: page
 title: ANTARES Processing Pipeline
-description:     A processing pipeline that converts ANTARES neutrino telescope data (AntDSTs) into a Swim-compatible format. It handles file merging, applies oscillation weights and corrections, and integrates ML-based NNFit reconstructions for analysis.
+description: A processing pipeline that converts ANTARES neutrino telescope data (AntDSTs) into a Swim-compatible format. It handles file merging, applies oscillation weights and corrections, and integrates ML-based NNFit reconstructions for analysis.
 img: assets/img/projects/antares_schematic.jpg
 importance: 1
 github: https://github.com/mchadolias/preprocess-antares-dst
@@ -18,7 +18,6 @@ Pipeline to convert ANTARES event files (`AntDSTs`) into a format compatible wit
         {% include figure.liquid loading="eager" path="assets/img/projects/flowgraph-preprocess.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-
 
 ## Input Files
 
@@ -90,7 +89,7 @@ Pipeline to convert ANTARES event files (`AntDSTs`) into a format compatible wit
 
 - Apply selection cuts (e.g., low-energy up-going, NNFit quality cuts).
 - Add "MC-truth" branches for perfect reconstruction reference.
-- Include detector dimensions (cylinder: $$ z_{\text{min}}, z_{\text{max}}, r $$) for `Swim` compatibility.
+- Include detector dimensions (cylinder: $$ z*{\text{min}}, z*{\text{max}}, r $$) for `Swim` compatibility.
 
 ## Output
 

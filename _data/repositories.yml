@@ -14,7 +14,6 @@ exclude_github:
   - mchadolias.github.io
   - al-folio
   - graphnet
-  - virtual-pipelines-eventselection 
+  - virtual-pipelines-eventselection
   - analysis-reproducibility-workshop2025
   - preprocess-antares-dst
-

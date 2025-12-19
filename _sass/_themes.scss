@@ -17,12 +17,12 @@
   --global-card-bg-color: #ffffff;
   --global-text-color: #1a1b26;
   --global-text-color-light: #4a4a4a;
-  --global-divider-color: rgba(0,0,0,0.12);
+  --global-divider-color: rgba(0, 0, 0, 0.12);
   --global-theme-color: #2e7de9; /* tn blue */
   --global-hover-color: #2e7de9;
   --global-hover-text-color: #ffffff;
 
-  --global-back-to-top-bg-color: rgba(0,0,0,0.4);
+  --global-back-to-top-bg-color: rgba(0, 0, 0, 0.4);
   --global-back-to-top-text-color: #ffffff;
 
   /* Info blocks */
@@ -52,10 +52,13 @@
   --tn-accent-red: #d94848;
 
   /* Visibility logic */
-  .only-light { display: block; }
-  .only-dark { display: none; }
+  .only-light {
+    display: block;
+  }
+  .only-dark {
+    display: none;
+  }
 }
-
 
 /* ============================================================================
    DARK THEME (Tokyonight Storm)
@@ -73,7 +76,7 @@ html[data-theme="dark"] {
   --global-hover-color: #7aa2f7;
   --global-hover-text-color: #ffffff;
 
-  --global-back-to-top-bg-color: rgba(255,255,255,0.4);
+  --global-back-to-top-bg-color: rgba(255, 255, 255, 0.4);
   --global-back-to-top-text-color: #000;
 
   /* Info blocks (dark variants) */
@@ -102,27 +105,41 @@ html[data-theme="dark"] {
   --tn-accent-green: #9ece6a;
   --tn-accent-red: #f7768e;
 
-  .only-light { display: none; }
-  .only-dark  { display: block; }
+  .only-light {
+    display: none;
+  }
+  .only-dark {
+    display: block;
+  }
 }
-
 
 /* ============================================================================
    MANUAL THEME SWITCH OVERRIDES
 ============================================================================ */
 
 html[data-theme-setting="dark"] {
-  #light-toggle-system { display: none; }
-  #light-toggle-dark   { display: block; }
-  #light-toggle-light  { display: none; }
+  #light-toggle-system {
+    display: none;
+  }
+  #light-toggle-dark {
+    display: block;
+  }
+  #light-toggle-light {
+    display: none;
+  }
 }
 
 html[data-theme-setting="light"] {
-  #light-toggle-system { display: none; }
-  #light-toggle-dark   { display: none; }
-  #light-toggle-light  { display: block; }
+  #light-toggle-system {
+    display: none;
+  }
+  #light-toggle-dark {
+    display: none;
+  }
+  #light-toggle-light {
+    display: block;
+  }
 }
-
 
 /* ============================================================================
    TOKYONIGHT GLOBAL LINK STYLING (APPLIES TO ENTIRE SITE)
@@ -132,19 +149,21 @@ a {
   color: var(--tn-accent-blue);
   text-decoration: none;
   position: relative;
-  transition: color 0.25s ease, text-shadow 0.25s ease;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
 }
 
 /* Hover: Light theme */
 html[data-theme="light"] a:hover {
   color: var(--tn-accent-green);
-  text-shadow: 0 0 4px rgba(0,0,0,0.12);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
 }
 
 /* Hover: Dark theme */
 html[data-theme="dark"] a:hover {
   color: var(--tn-accent-green);
-  text-shadow: 0 0 6px rgba(255,255,255,0.25);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.25);
 }
 
 /* Optional VSCode-style underline animation */
@@ -163,7 +182,6 @@ a:hover::after {
   width: 100%;
 }
 
-
 /* ============================================================================
    GLOBAL TOKYONIGHT BOX COMPONENT (Used by Stats, Profile, Repo Cards, etc.)
 ============================================================================ */
@@ -174,8 +192,10 @@ a:hover::after {
   padding: 16px;
   border-radius: 10px;
   border: 1px solid var(--global-divider-color);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .tokyo-box--auto img {
@@ -201,7 +221,13 @@ a:hover::after {
 }
 
 @keyframes skeleton-loading {
-  0%   { opacity: 0.45; }
-  50%  { opacity: 1; }
-  100% { opacity: 0.45; }
+  0% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.45;
+  }
 }

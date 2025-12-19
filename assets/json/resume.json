@@ -58,10 +58,7 @@
       "startDate": "2022-11",
       "endDate": "2023-04",
       "summary": "Co-developed and tested modules within a Snakemake-based MC production pipeline for ORCA events",
-      "highlights": [
-        "Achieved 25% CPU workload reduction through SLURM optimization",
-        "Performed testing and diagnostics on NHR@FAU cluster"
-      ]
+      "highlights": ["Achieved 25% CPU workload reduction through SLURM optimization", "Performed testing and diagnostics on NHR@FAU cluster"]
     },
     {
       "name": "National Centre of Scientific Research Demokritos (NCSR)",
@@ -69,10 +66,7 @@
       "startDate": "2021-11",
       "endDate": "2022-01",
       "summary": "Studied reconstruction quality of simulated events for KM3NeT/ORCA6 configuration",
-      "highlights": [
-        "Analyzed νμ interaction topologies across key metrics",
-        "Assisted in optical module integration and component testing"
-      ]
+      "highlights": ["Analyzed νμ interaction topologies across key metrics", "Assisted in optical module integration and component testing"]
     }
   ],
   "volunteer": [
@@ -141,13 +135,7 @@
   "interests": [
     {
       "name": "Research Interests",
-      "keywords": [
-        "Astroparticle physics",
-        "Particle Physics",
-        "Neutrino physics",
-        "Data science & AI",
-        "Statistical & Computational methods"
-      ]
+      "keywords": ["Astroparticle physics", "Particle Physics", "Neutrino physics", "Data science & AI", "Statistical & Computational methods"]
     },
     {
       "name": "Hobbies",

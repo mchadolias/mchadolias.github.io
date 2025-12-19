@@ -1,10 +1,14 @@
 {% assign username = include.username %}
 <div class="hover-card fade-in" style="width:100%;">
-  <img class="only-dark w-100"
-       src="https://github-readme-streak-stats.herokuapp.com/?user={{ username }}&theme={{ site.repo_theme_dark}}"
-       alt="{{ username }} commit streak">
+  <img
+    class="only-dark w-100"
+    src="https://github-readme-streak-stats.herokuapp.com/?user={{ username }}&theme={{ site.repo_theme_dark}}"
+    alt="{{ username }} commit streak"
+  >
 
-  <img class="only-light w-100"
-       src="https://github-readme-streak-stats.herokuapp.com/?user={{ username }}&theme={{ site.repo_theme_light }}"
-       alt="{{ username }} commit streak">
+  <img
+    class="only-light w-100"
+    src="https://github-readme-streak-stats.herokuapp.com/?user={{ username }}&theme={{ site.repo_theme_light }}"
+    alt="{{ username }} commit streak"
+  >
 </div>

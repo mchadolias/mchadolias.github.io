@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: 
+description:
 nav: false
 display_categories: [Physics Research & Computing, ML Applications, Data for fun]
 horizontal: false
@@ -65,4 +65,4 @@ horizontal: false
 
 ---
 
-*This page will be continuously updated as I add different projects from my personal and professional life.*
+_This page will be continuously updated as I add different projects from my personal and professional life._
