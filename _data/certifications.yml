@@ -1,6 +1,7 @@
 - name: "Machine Learning ZoomCamp"
   issuer: "DataTalks Club"
-  date: "Expected (Oct 2025 - Jan 2026)"
+  expected: "Jan 2026"
+  status: ongoing
   url: "https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html#machine-learning-zoomcamp"
 
 - name: "KM3NeT Boot Camp 2024"

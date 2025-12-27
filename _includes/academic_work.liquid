@@ -5,14 +5,15 @@
       <div class="sort-controls">
         <button class="sort-btn active" data-sort="date-desc">Newest First</button>
         <button class="sort-btn" data-sort="date-asc">Oldest First</button>
-        <button class="sort-btn" data-sort="title-asc">Title A-Z</button>
-        <button class="sort-btn" data-sort="title-desc">Title Z-A</button>
       </div>
     </div>
 
     <div class="documents-list" id="academic-list">
       {%- for item in site.data.academic -%}
-        <div class="document-item" data-title="{{ item.title | downcase }}" data-date="{{ item.sort_date }}">
+        <div
+          class="document-item"
+          data-title="{{ item.title | downcase }}"
+          data-date="{{ item.sort_date }}">
           <!-- Type badge first -->
           <div class="document-type">
             {%- if item.type == 'thesis' -%}
@@ -45,7 +46,9 @@
           </div>
 
           {%- if item.abstract -%}
-            <div class="document-description"><strong>Abstract:</strong> {{ item.abstract }}</div>
+            <div class="document-description">
+              <strong>Abstract:</strong>
+              {{ item.abstract }}</div>
           {%- elsif item.description -%}
             <div class="document-description">
               {{ item.description }}
@@ -53,16 +56,24 @@
           {%- endif -%}
 
           {%- if item.supervisors -%}
-            <div class="document-details"><strong>Supervisors:</strong> {{ item.supervisors }}</div>
+            <div class="document-details">
+              <strong>Supervisors:</strong>
+              {{ item.supervisors }}</div>
           {%- endif -%}
 
           {%- if item.technologies -%}
-            <div class="document-details"><strong>Technologies:</strong> {{ item.technologies }}</div>
+            <div class="document-details">
+              <strong>Technologies:</strong>
+              {{ item.technologies }}</div>
           {%- endif -%}
 
           <div class="document-links">
             {%- if item.pdf -%}
-              <a href="{{ item.pdf }}" target="_blank" rel="noopener" class="document-link">
+              <a
+                href="{{ item.pdf }}"
+                target="_blank"
+                rel="noopener"
+                class="document-link">
                 {%- if item.type == 'thesis' -%}View Thesis{%- else -%}View Report{%- endif -%}
               </a>
             {%- endif -%}
@@ -95,10 +106,6 @@
               return bDate - aDate;
             case 'date-asc':
               return aDate - bDate;
-            case 'title-asc':
-              return aTitle.localeCompare(bTitle);
-            case 'title-desc':
-              return bTitle.localeCompare(aTitle);
             default:
               return 0;
           }

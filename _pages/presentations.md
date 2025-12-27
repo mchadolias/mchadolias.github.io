@@ -10,4 +10,4 @@ layout: page
 
 ---
 
-The page is under construction 🚨 🛠️ ⚠️
+_A small overview of the work, I have been involved with through the years!_
