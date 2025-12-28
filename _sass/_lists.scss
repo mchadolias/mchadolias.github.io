@@ -1,3 +1,14 @@
+/* =========================================================
+   GLOBAL SPACING CONTROL
+   Change only these to control layout density everywhere
+  ========================================================= */
+$section-spacing: 1rem; // vertical spacing between sections
+$card-padding: 1.2rem; // inside box padding
+$card-spacing: 1rem; // gap between cards
+$mobile-card-padding: 0.96rem; // mobile density
+$mobile-card-spacing: 0.96rem; // mobile spacing
+/* ======================================================= */
+
 /* ===== Shared Header Styles ===== */
 .documents-header,
 .certifications-header {
@@ -34,12 +45,7 @@
   transition: all 0.2s ease;
 }
 
-.sort-btn:hover {
-  background: var(--tn-accent-blue);
-  color: #fff;
-  border-color: var(--tn-accent-blue);
-}
-
+.sort-btn:hover,
 .sort-btn.active {
   background: var(--tn-accent-blue);
   color: #fff;
@@ -51,8 +57,8 @@
 .certification-item {
   background: var(--tn-bg-secondary);
   border-left: 4px solid var(--tn-accent-blue);
-  padding: 1.6rem;
-  margin-bottom: 1.6rem;
+  padding: $card-padding;
+  margin-bottom: $card-spacing;
   border-radius: 6px;
   color: var(--tn-text);
 }
@@ -67,7 +73,7 @@ html[data-theme="dark"] .certification-item {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Document Specific Styles ===== */
+/* ===== Document Styles ===== */
 .document-title {
   margin: 0 0 0.8rem 0;
   color: var(--tn-accent-blue);
@@ -117,33 +123,9 @@ html[data-theme="dark"] .certification-item {
   margin-top: 1.12rem;
 }
 
-.document-link {
-  display: inline-block;
-  padding: 0.48rem 1.2rem;
-  background: var(--tn-accent-blue);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.document-link:hover {
-  background: var(--tn-accent-green);
-  transform: translateY(-2px);
-}
-
-html[data-theme="light"] .document-link:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-html[data-theme="dark"] .document-link:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* ===== Certification Specific Styles ===== */
+/* ===== Certification Styles ===== */
 .certifications-container {
-  margin: 1.6rem 0;
+  margin: $section-spacing 0;
 }
 
 .certification-title {
@@ -180,6 +162,8 @@ html[data-theme="dark"] .document-link:hover {
   margin-top: 0.96rem;
 }
 
+/* ===== Buttons ===== */
+.document-link,
 .certification-link {
   display: inline-block;
   padding: 0.48rem 1.2rem;
@@ -191,20 +175,23 @@ html[data-theme="dark"] .document-link:hover {
   transition: all 0.3s ease;
 }
 
+.document-link:hover,
 .certification-link:hover {
   background: var(--tn-accent-green);
   transform: translateY(-2px);
 }
 
+html[data-theme="light"] .document-link:hover,
 html[data-theme="light"] .certification-link:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+html[data-theme="dark"] .document-link:hover,
 html[data-theme="dark"] .certification-link:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== Responsive Design ===== */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .documents-header,
   .certifications-header {
@@ -219,8 +206,8 @@ html[data-theme="dark"] .certification-link:hover {
 
   .document-item,
   .certification-item {
-    padding: 0.96rem;
-    margin-bottom: 0.96rem;
+    padding: $mobile-card-padding;
+    margin-bottom: $mobile-card-spacing;
   }
 
   .document-title {
