@@ -1,27 +1,94 @@
 # Theses
-- title: "Detection of low-energy tau neutrinos with the ANTARES neutrino telescope - a feasibility study"
+- title: "Detection of Low-Energy Tau Neutrinos with the ANTARES Neutrino Telescope - A Feasibility Study"
   type: "thesis"
   subtype: "Master's Thesis"
-  institution: "FAU Erlangen-Nürnberg - Erlangen Centre for Astroparticle Physics"
-  date: "Oct 2025"
-  sort_date: "2025-10"
+  institution: "FAU Erlangen-Nürnberg - Erlangen Centre for Astroparticle Physics (ECAP)"
+  date: "October 2024"
+  grade: "Very Good (1.25 / Excellent)"
+  sort_date: "2024-10"
   pdf: "/assets/pdf/theses/msc-thesis.pdf"
-  supervisors: "PD. Dr. Thomas Eberl (FAU & ECAP)"
+  supervisors: "PD Dr. Thomas Eberl (FAU & ECAP)"
+  abstract: |
+    Neutrino physics has played a pivotal role in modern particle physics. From the postulation of its existence by
+    Pauli in the 1930s and the introduction of neutrino oscillation phenomenology by Pontecovo in the 1950s, to
+    the first experimental evidence of neutrino oscillations in the 1990s, the physics sector has made great strides
+    and constantly grown, with two Nobel Prizes being awarded to related works since the turn of the century.
+    The existence of neutrino oscillations showed that a neutrino of a given flavor has a non-zero probability
+    of being detected after propagation as another flavor. As a result, the Pontecorvo-Maki-Nakagawa-Sakata
+    (PMNS) matrix was developed to describe the mixing and oscillation of neutrinos between their three different
+    flavors. Measurement of the elements of the PMNS matrix and constraining their errors have been an ongoing
+    effort, with the ντ appearance measurement being one of them.
+    The ANTARES detector, a megaton-volume water Cherenkov neutrino telescope located in the Mediter-
+    ranean Sea at a depth of 2.5 kilometers, operated successfully until its decommissioning in 2022. It consisted
+    of several hundred photomultiplier tubes (PMTs) arranged in a three-dimensional grid. Primarily designed
+    to detect high-energy neutrinos of astrophysical origin, it was also sensitive to all neutrino flavors in the
+    atmospheric neutrino flux with an energy threshold of a few GeV. This work focuses on tau neutrino ap-
+    pearance, i.e. the existence of a tau neutrino atmospheric flux component resulting from neutrino flavor
+    oscillations in the energy range of a few GeV up to 100 GeV. Using data from the full 15-year detector
+    lifetime, an exploratory analysis was undertaken to examine the feasibility of detecting and characterizing
+    a flux of tau neutrinos with the ANTARES detector. This is the first investigation to assess the potential
+    sensitivity of the detector in detecting tau appearance. With a dedicated pipeline being developed to process
+    all reconstructed data, the suitability of a reconstruction algorithm and initial cut selection criteria were
+    identified. The calculation of the tau normalization parameter was achieved with Swim, the official tool for
+    oscillation analysis by the Cubic Kilometre Neutrino Telescope (KM3NeT) collaboration. The sensitivities of
+    the best-performing reconstruction algorithms have been determined when the Charged Current (CC) sector
+    is investigated assuming Normal Mass Ordering (NMO). The results of Neural Network Fit (NNFit), the main
+    reconstruction algorithm of this analysis, were compared with smeared versions of ”perfectly” reconstructed
+    events, revealing that at its current level, it exhibits a sensitivity of on par with smearing 90%. The potential
+    gains of this analysis from a better performing reconstruction algorithm have also been reviewed.
 
 - title: "Monte Carlo Simulation Radiation Transport - Radiation Analysis for the nano-satellite AcubeSAT"
   type: "thesis"
   subtype: "Bachelor's Thesis"
   institution: "Aristotle University of Thessaloniki"
-  date: "Mar 2022"
+  date: "March 2022"
   sort_date: "2022-3"
+  grade: "Excellent (10/10)"
   pdf: "/assets/pdf/theses/bsc-thesis.pdf"
   supervisors: "Prof. Christos Elefteriadis (AUTh)"
+  abstract: |
+    This thesis includes the radiation studies for the first nano satellite, AcubeSAT
+    from the Aristotle University of Thessaloniki. This research was conducted inside
+    the SpaceDot team, which participates in the third round of the "Fly Your Satel-
+    lite!" program under of the European Space Agency(ESA). AcubeSAT is a greek
+    student 3U-Cubesat, that host inside a biological experiment, that studies the ef-
+    fect of radiation and microgravity to eykariotic cells, with the expected launch to
+    occur in the second quarter of 2023. A detailed analysis for the flux and the flunce
+    of trapped particles, solar particles and galactic cosmic rays in a LEO orbit. The
+    LET and the total ionizing dose has been calculated for a spherical shell geometry.
+    The simulation was conducted with the OMERE, a software developed by TRAD
+    company with the support of CNES.
+    In addition, two simulations methods have been performed with the FASTRAD soft-
+    ware: the ray-tracing simulation and forward Monte Carlo simulation. Ray-tracing
+    simulation provides a sector shielding analysis of the models, giving an overview of
+    the received radiation dose for each specific point in the models. Forward Monte
+    Carlo provides an overview of the deposited radiation for each section of the model,
+    which has proven particularly useful for the state-of-the-art model, in which the
+    deposited dosage for each part of the model has been determined.
+    All simulations for the AcubeSAT missions indicate that the greatest contributor
+    to radiation dose in the simulations came from trapped particles. From the dose
+    levels results, the components of the satellite can endure and be functional during
+    the whole duration of the mission.
 
 # Internships
 - title: "KM3NeT/ORCA - Energy Reconstruction Studies"
   type: "internship"
-  company: "NSCR Democritus - Institute for Nuclear and Particle Physics"
+  company: "National Centre For Scientific Research Demokritos (NSCR) - Institute of Nuclear and Particle Physics"
   date: "Fall 2021"
+  grade: "Excellent (10/10)"
   sort_date: "2021-11"
   pdf: "/assets/pdf/internships/km3net-athens-report.pdf"
   supervisors: "Dr. Ekaterini Tzamariudaki (NCSR) & Prof. Anastasios Liolios (AUTh)"
+  abstract: |
+    This report covers the work accomplished accomplished as part of the generic elective course
+    ΑΜΕ501 Internship of the B.S in Physics from AUTh University. The internship was
+    performed in NCSR Democritus in the Institute of Nuclear and Particle Physics in the As-
+    troparticle Research Group, which is a member of the KM3NeT Collaboration. The research
+    was carried out under the guidance of Dr Ekaterini Tzamarioudaki and the invaluable help
+    of Phd Candidate Dimitrios Stavropoulos. Data collected with the KM3NeT-ORCA detector
+    have been used for this study. The energy resolution for reconstructed muon tracks origi-
+    nating from neutrino interactions has been investigated. For the study an individual code,
+    analyze_orca6_data.cc(A). Many variables were taken into consideration like the position of
+    the vertex, the 3D direction of the incident neutrino, the energy of the neutrino and the pro-
+    portion of the energy in the daughter particle (muon). These studies are presented in detail
+    in the following report.

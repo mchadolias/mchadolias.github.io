@@ -9,6 +9,46 @@ $mobile-card-padding: 0.96rem; // mobile density
 $mobile-card-spacing: 0.96rem; // mobile spacing
 /* ======================================================= */
 
+/* ===== Hover Abstract Behaviour ===== */
+.document-abstract .abstract-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.35s ease;
+}
+
+/* Show while hovering card */
+.document-item:hover .document-abstract .abstract-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.document-abstract {
+  margin-top: 0.6rem;
+  padding-top: 0.4rem;
+  border-top: 1px dashed var(--global-divider-color);
+  margin-bottom: 0.9rem; /* increased spacing before supervisors */
+}
+
+/* Submission + Grade layout */
+.submission-grade-row {
+  display: flex;
+  gap: 0.6rem; /* slightly tighter */
+  flex-wrap: wrap;
+  margin-top: 0.2rem; /* smaller gap after supervisors */
+}
+
+.submission-grade-row span {
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+}
+
+/* Mobile / Tap behaviour */
+.document-item.open .document-abstract .abstract-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
 /* ===== Shared Header Styles ===== */
 .documents-header,
 .certifications-header {

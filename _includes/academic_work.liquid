@@ -14,7 +14,8 @@
           class="document-item"
           data-title="{{ item.title | downcase }}"
           data-date="{{ item.sort_date }}">
-          <!-- Type badge first -->
+
+          <!-- Type badge -->
           <div class="document-type">
             {%- if item.type == 'thesis' -%}
               {{ item.subtype }}
@@ -23,11 +24,12 @@
             {%- endif -%}
           </div>
 
-          <!-- Title second -->
+          <!-- Title -->
           <h4 class="document-title">{{ item.title }}</h4>
 
           <div class="document-meta">
-            <!-- Institution/Company -->
+
+            <!-- Institution / Company -->
             <div class="meta-item">
               {%- if item.type == 'thesis' -%}
                 <span class="document-institution">{{ item.institution }}</span>
@@ -36,7 +38,7 @@
               {%- endif -%}
             </div>
 
-            <!-- Date and Duration -->
+            <!-- Date + Duration -->
             <div class="meta-item">
               <span class="document-date">{{ item.date }}</span>
               {%- if item.duration -%}
@@ -45,28 +47,53 @@
             </div>
           </div>
 
+          <!-- Hover / Tap Abstract -->
           {%- if item.abstract -%}
-            <div class="document-description">
+            <div class="document-abstract">
               <strong>Abstract:</strong>
-              {{ item.abstract }}</div>
+              <div class="abstract-content">
+                {{ item.abstract }}
+              </div>
+            </div>
           {%- elsif item.description -%}
             <div class="document-description">
               {{ item.description }}
             </div>
           {%- endif -%}
 
+          <!-- Supervisors -->
           {%- if item.supervisors -%}
             <div class="document-details">
               <strong>Supervisors:</strong>
-              {{ item.supervisors }}</div>
+              {{ item.supervisors }}
+            </div>
           {%- endif -%}
 
+          <!-- Submission + Grade (NOW HERE) -->
+          {% if item.submission or item.grade %}
+            <div class="submission-grade-row">
+              {% if item.submission %}
+                <span>
+                  <strong>Submission:</strong>
+                  {{ item.submission }}</span>
+              {% endif %}
+              {% if item.grade %}
+                <span>
+                  <strong>Grade:</strong>
+                  {{ item.grade }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <!-- Technologies -->
           {%- if item.technologies -%}
             <div class="document-details">
               <strong>Technologies:</strong>
-              {{ item.technologies }}</div>
+              {{ item.technologies }}
+            </div>
           {%- endif -%}
 
+          <!-- Links -->
           <div class="document-links">
             {%- if item.pdf -%}
               <a
@@ -96,8 +123,6 @@
 
       function sortAcademic(sortType) {
         academicItems.sort((a, b) => {
-          const aTitle = a.dataset.title;
-          const bTitle = b.dataset.title;
           const aDate = parseDate(a.dataset.date);
           const bDate = parseDate(b.dataset.date);
 
@@ -124,6 +149,13 @@
       });
 
       sortAcademic('date-desc');
+
+      /* Mobile tap expand */
+      academicItems.forEach(item => {
+        item.addEventListener('click', () => {
+          item.classList.toggle('open');
+        });
+      });
     });
   </script>
 {%- endif -%}
