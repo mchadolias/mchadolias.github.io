@@ -1,14 +1,18 @@
-<div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.repository }}">
-    <img
-      class="only-light w-100"
-      alt="{{ include.repository }}"
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username={{ include.username }}&theme={{ site.repo_theme_light | default: 'default' }}&locale={{ lang }}&show_icons=true&size_weight=0.3&count_weight=0.7&exclude_repo={{ include.username }}.github.io,al-folio&layout=donut"
-    >
-    <img
-      class="only-dark w-100"
-      alt="{{ include.repository }}"
-      src="https://github-readme-stats.vercel.app/api/top-langs/?username={{ include.username }}&theme={{ site.repo_theme_dark | default: 'dark' }}&locale={{ lang }}&show_icons=true&size_weight=0.3&count_weight=0.7&exclude_repo={{ include.username }}.github.io,al-folio&layout=donut"
-    >
-  </a>
+{% assign username = include.username %}
+{% assign theme_light = 'default' %}
+{% assign theme_dark = site.repo_theme_dark | default: 'dark' %}
+
+<div class="hover-card tokyo-box tokyo-box--auto github-summary-card fade-in">
+  <div class="tokyo-box-title">Languages Across Repositories</div>
+  <div class="tokyo-box-item">Primary technology usage</div>
+
+  <img
+    class="only-dark w-100"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username={{ username }}&theme={{ theme_dark }}"
+    alt="{{ username }} languages">
+
+  <img
+    class="only-light w-100"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username={{ username }}&theme={{ theme_light }}"
+    alt="{{ username }} languages">
 </div>

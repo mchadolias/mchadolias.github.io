@@ -6,36 +6,53 @@ description: My GitHub repositories and contributions.
 nav: false
 ---
 
-I'm gradually building my programming skills through personal projects. These repositories reflect my interest in computational physics and data analysis techniques.
+I'm gradually building my programming skills through personal projects.  
+These repositories reflect my interest in computational physics, data analysis, and software development.
 
 {% if site.data.repositories.github_users %}
-
-## GitHub Users
-
 {% for user in site.data.repositories.github_users %}
 
-<div class="github-user-grid" style="display:grid; gap:100px; grid-template-columns: 1fr 1fr;">
+<!-- ================================================= -->
+<!-- 1️⃣ PROFILE (LEFT) — OVERVIEW (RIGHT)            -->
+<!-- ================================================= -->
 
-  <!-- LEFT: PROFILE INFO -->
+<div class="github-grid">
+
+  <!-- LEFT: BIO / PROFILE -->
   <div>
-    {% include repository/repo_user_profile.liquid username=user %}
+    {% include repository/user_profile.liquid username=user %}
   </div>
 
-  <!-- RIGHT: USER ACCOUNT STATS -->
+  <!-- RIGHT: GENERAL OVERVIEW -->
   <div>
-    {% include repository/repo_user_stats.liquid username=user %}
+    {% include repository/user_stats.liquid username=user %}
   </div>
 
 </div>
 
-<!-- STREAK -->
-<div style="margin-top:20px; width:600px; margin-left:auto; margin-right:auto;">
-  {% include repository/repo_user_streak.liquid username=user %}
-</div>
+<div style="margin-top:35px;"></div>
 
-<!-- SUMMARY SECTION -->
-<div style="margin-top:40px;">
-  {% include repository/repo_user_summary.liquid username=user %}
+<!-- ================================================= -->
+<!-- 2️⃣ CONTRIBUTIONS + LANG / METRICS GRID          -->
+<!-- ================================================= -->
+
+<!-- Full-width contributions -->
+
+{% include repository/repo_contributions.liquid username=user %}
+
+<div style="margin-top:35px;"></div>
+
+<!-- Two-column layout (languages + metrics) -->
+<div class="github-grid">
+
+  <div>
+    {% include repository/repo_languages.liquid username=user %}
+  </div>
+
+  <div>
+    {% include repository/repo_recent_projects.liquid username=user %}
+  </div>
+
 </div>
 
 <hr style="margin:60px 0;">
@@ -45,4 +62,4 @@ I'm gradually building my programming skills through personal projects. These re
 
 ---
 
-_This is an ongoing learning process — I welcome feedback and collaboration opportunities on any of these projects._
+_This is an ongoing learning journey — I welcome feedback and collaboration opportunities on any of these projects._

@@ -1,0 +1,20 @@
+{% assign username = include.username %}
+{% assign lang = site.lang | split: '-' | first %}
+
+<div class="hover-card tokyo-box github-box fade-in">
+  <div class="tokyo-box-title">
+    GitHub Overview
+  </div>
+
+  <div class="tokyo-box-item github-box-content">
+    <img
+      class="only-dark github-metric-img"
+      src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ username }}&theme={{ site.repo_theme_dark }}"
+      alt="{{ username }} stats">
+
+    <img
+      class="only-light github-metric-img"
+      src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ username }}&theme=default"
+      alt="{{ username }} stats">
+  </div>
+</div>

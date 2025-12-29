@@ -1,0 +1,18 @@
+{% assign username = include.username %}
+{% assign theme_light = 'default' %}
+{% assign theme_dark = site.repo_theme_dark | default: 'dark' %}
+
+<div class="hover-card tokyo-box tokyo-box--auto github-summary-card fade-in">
+  <div class="tokyo-box-title">Repository & Contribution Metrics</div>
+  <div class="tokyo-box-item">Stars, commits, PRs, issues</div>
+
+  <img
+    class="only-dark w-100"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ username }}&theme={{ theme_dark }}"
+    alt="{{ username }} metrics">
+
+  <img
+    class="only-light w-100"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username={{ username }}&theme={{ theme_light }}"
+    alt="{{ username }} metrics">
+</div>

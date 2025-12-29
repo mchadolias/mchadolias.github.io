@@ -1,0 +1,59 @@
+{% assign username = include.username %}
+
+<div class="hover-card tokyo-box github-box fade-in">
+  <div class="tokyo-box-title">
+    GitHub Profile
+  </div>
+
+  <div class="tokyo-box-item github-box-content">
+
+    <!-- Avatar with hover bio -->
+    <div class="avatar-wrapper" id="avatar-wrap-{{ username }}">
+      <a href="https://github.com/{{ username }}">
+        <img
+          id="avatar-img-{{ username }}"
+          src="https://github.com/{{ username }}.png"
+          alt="{{ username }}"
+          class="avatar-img">
+      </a>
+
+      <div class="avatar-overlay" id="avatar-overlay-{{ username }}">
+        Loading bio…
+      </div>
+    </div>
+
+    <p class="profile-username">{{ username }}</p>
+
+    <p class="profile-subtext">
+      Personal GitHub identity and account info
+    </p>
+
+    <a href="https://github.com/{{ username }}" class="btn profile-btn">
+      View Profile
+    </a>
+
+  </div>
+</div>
+
+<script>
+  const wrap_{{ username }} = document.getElementById("avatar-wrap-{{ username }}");
+  const overlay_{{ username }} = document.getElementById("avatar-overlay-{{ username }}");
+
+  wrap_{{ username }}.addEventListener("mouseenter", () => {
+  overlay_{{ username }}.style.opacity = 1;
+  });
+  wrap_{{ username }}.addEventListener("mouseleave", () => {
+  overlay_{{ username }}.style.opacity = 0;
+  });
+
+  /* Fetch GitHub bio */
+  fetch("https://api.github.com/users/{{ username }}")
+  .then(r => r.json())
+  .then(user => {
+    overlay_{{ username }}.innerHTML =
+      user.bio ? user.bio.replace(/\n/g,"<br>") : "No profile bio available.";
+  })
+  .catch(() => {
+    overlay_{{ username }}.innerHTML = "Could not load bio.";
+  });
+</script>

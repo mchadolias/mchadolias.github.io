@@ -1,0 +1,217 @@
+{% assign username = include.username %}
+
+<div class="hover-card tokyo-box github-summary-card fade-in">
+  <div class="tokyo-box-title">This Week’s Contributions</div>
+
+  <div class="tokyo-box-item">
+    <p style="opacity:0.8;">
+      Most active repositories I personally contributed to in the last 7 days.
+    </p>
+
+    <div id="weekly-projects-{{ username }}">
+      Loading weekly activity…
+    </div>
+  </div>
+</div>
+
+<script>
+  (async () => {
+  const container = document.getElementById("weekly-projects-{{ username }}");
+
+  /* ==============================
+     CONFIG
+  ============================== */
+  const WEEK = 1000 * 60 * 60 * 24 * 7;
+  const CACHE_KEY = "weekly-projects-{{ username }}";
+  const CACHE_TTL = 1000 * 60 * 60 * 6; // 6 hours
+  const PROFILE_REPO = "{{ username }}/{{ username }}";
+
+  /* ==============================
+     UTILITIES
+  ============================== */
+  const badgeMap = {
+    PushEvent: "Push",
+    PullRequestEvent: "PR",
+    PullRequestReviewEvent: "Review",
+    IssuesEvent: "Issue"
+  };
+
+  function shortAgo(date) {
+    const diff = (Date.now() - new Date(date).getTime()) / 1000;
+    if (diff < 3600) return Math.floor(diff / 60) + "m";
+    if (diff < 86400) return Math.floor(diff / 3600) + "h";
+    if (diff < 604800) return Math.floor(diff / 86400) + "d";
+    return "7d+";
+  }
+
+  function render(repos) {
+    container.innerHTML = `
+      <ul style="list-style:none; padding-left:0;">
+        ${repos.map(r => `
+          <li style="
+            margin-bottom:10px;
+            padding:10px 12px;
+            border-radius:8px;
+            background:var(--tn-bg-secondary);
+            border:1px solid var(--global-divider-color);
+          ">
+            <a href="https://github.com/${r.repo}" target="_blank"
+               style="font-weight:700; text-decoration:none;">
+              ${r.repo}
+            </a>
+            <span style="opacity:.7;"> • ${r.count} contributions</span><br>
+
+            <span>
+              ${[...r.types].map(t =>
+                `<span style="
+                  background:var(--tn-bg-primary);
+                  border:1px solid var(--global-divider-color);
+                  padding:2px 6px;
+                  border-radius:6px;
+                  margin-right:6px;
+                  font-size:0.8rem;
+                ">${badgeMap[t] || "Other"}</span>`
+              ).join("")}
+            </span>
+
+            <span style="opacity:.7; font-size:0.85rem; float:right;">
+              ${shortAgo(r.last)}
+            </span>
+          </li>
+        `).join("")}
+      </ul>
+    `;
+  }
+
+  function buildReposFromEvents(events) {
+    const now = Date.now();
+    const repoMap = {};
+
+    const contributionTypes = [
+      "PushEvent",
+      "PullRequestEvent",
+      "PullRequestReviewEvent",
+      "IssuesEvent"
+    ];
+
+    for (const ev of events) {
+      if (!ev?.repo?.name) continue;
+
+      const repo = ev.repo.name;
+      const time = new Date(ev.created_at).getTime();
+
+      // Only last 7 days
+      if (now - time > WEEK) continue;
+
+      // Only contribution-type events
+      if (!contributionTypes.includes(ev.type)) continue;
+
+      // Exclude profile README automation repo
+      if (repo.toLowerCase() === PROFILE_REPO.toLowerCase()) continue;
+
+      // Try to exclude github-actions bot noise (when commit info is present)
+      if (ev?.payload?.commits) {
+        const botCommit = ev.payload.commits.some(
+          c =>
+            c.author?.email?.includes("github-actions") ||
+            c.author?.name?.includes("github-actions")
+        );
+        if (botCommit) continue;
+      }
+
+      if (!repoMap[repo]) {
+        repoMap[repo] = {
+          repo,
+          count: 0,
+          types: new Set(),
+          last: ev.created_at
+        };
+      }
+
+      repoMap[repo].count++;
+      repoMap[repo].types.add(ev.type);
+
+      if (time > new Date(repoMap[repo].last).getTime()) {
+        repoMap[repo].last = ev.created_at;
+      }
+    }
+
+    return Object.values(repoMap)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 4); // MAX 4 repos
+  }
+
+  /* ==============================
+     CACHE LOAD (if valid)
+  ============================== */
+  let cachedData = null;
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && parsed.timestamp && parsed.repos) {
+        cachedData = parsed;
+      }
+    }
+  } catch (e) {
+    // Ignore cache parse errors, treat as no cache
+  }
+
+  const cacheIsFresh =
+    cachedData && Date.now() - cachedData.timestamp < CACHE_TTL;
+
+  if (cacheIsFresh && Array.isArray(cachedData.repos)) {
+    render(cachedData.repos);
+    // We can still fetch in the background to refresh silently if we want,
+    // but for now we can skip extra API calls and just return here.
+    return;
+  }
+
+  /* ==============================
+     LIVE FETCH (or fallback to stale cache)
+  ============================== */
+  try {
+    const res = await fetch(
+      "https://api.github.com/users/{{ username }}/events/public"
+    );
+    const events = await res.json();
+
+    if (!Array.isArray(events)) {
+      if (cachedData && Array.isArray(cachedData.repos)) {
+        render(cachedData.repos);
+      } else {
+        container.innerHTML = "No contribution data available.";
+      }
+      return;
+    }
+
+    const repos = buildReposFromEvents(events);
+
+    if (!repos.length) {
+      if (cachedData && Array.isArray(cachedData.repos) && cachedData.repos.length) {
+        render(cachedData.repos);
+      } else {
+        container.innerHTML = "No public contributions in the past week.";
+      }
+      return;
+    }
+
+    render(repos);
+
+    try {
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({ timestamp: Date.now(), repos })
+      );
+    } catch (e) {
+      // Ignore cache write errors (e.g. private mode)
+    }
+  } catch (e) {
+    if (cachedData && Array.isArray(cachedData.repos) && cachedData.repos.length) {
+      render(cachedData.repos);
+    } else {
+      container.innerHTML = "Could not load weekly contribution data.";
+    }
+  }
+  })();
+</script>
