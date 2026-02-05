@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <p> MSc in Astroparticle Physics | Data Science & Machine Learning | Statistical & Computational Methods <p>
+subtitle: <p> PhD Student in Neutrino Physics | Data Science & Machine Learning | Statistical & Computational Methods <p>
 
 profile:
   align: right
@@ -29,10 +29,14 @@ latest_posts:
 
 ## About me
 
-<p>I am a graduate physicist with a deep interest in neutrino and astroparticle physics. I am particularly drawn to the challenge of connecting experimental data with theory through practical applications of computational and statistical methods.</p>
+<p>
+I am a Doctoral Researcher at the Instituto de Física Corpuscular (IFIC, CSIC–University of Valencia) and an FPI Research Fellow, working on the KM3NeT/ORCA experiment. My research focuses on neutrino oscillation physics, with an emphasis on advanced computational, statistical, and machine learning methods for large-scale neutrino detectors.
+</p>
 
-<p>I recently completed my M.Sc. in Physics at Friedrich-Alexander University Erlangen–Nürnberg, where I worked within the KM3NeT and ANTARES collaborations at the Erlangen Centre for Astroparticle Physics (ECAP). My master's thesis featured the first feasibility study of tau-neutrino appearance using the full ANTARES dataset. I have extensive experience developing large-scale Monte Carlo simulation chains and applying machine learning models for event reconstruction, leveraging HPC clusters for data-intensive analysis.<p>
+<p>
+My work builds on previous experience within the KM3NeT and ANTARES collaborations at the Erlangen Centre for Astroparticle Physics (ECAP), where my Master’s thesis presented the first feasibility study of tau-neutrino appearance using the full ANTARES dataset. I am particularly interested in bridging high-statistics experimental data with fundamental theoretical models through rigorous data-driven approaches.
+</p>
 
-<p>My foundation in experimental physics was built during my B.Sc. at the Aristotle University of Thessaloniki. There, I coordinated the trajectory subsystem for the AcubeSAT nanosatellite mission, modeling orbital radiation, and contributed to the KM3NeT/ORCA experiment through an internship at NCSR "Demokritos.<p>
-
-<p>Beyond research, I am passionate about science communication and mentoring. Outside of physics, I enjoy strategic games like chess and immersive role-playing campaigns.<p>
+<p>
+Beyond research, I am passionate about science communication and mentoring. Outside of physics, I enjoy strategic games like chess and immersive role-playing campaigns.
+</p>
