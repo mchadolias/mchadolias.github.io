@@ -1,7 +1,7 @@
 {%- if site.data.certifications -%}
   <div class="certifications-container">
     <div class="certifications-header">
-      <h2>Certifications & Workshops</h2>
+      <h2>Seminars & Workshops</h2>
 
       <div class="sort-controls">
         <button class="sort-btn active" data-sort="date-desc">Newest First</button>
@@ -14,12 +14,12 @@
         <div
           class="certification-item"
           data-name="{{ cert.name | downcase }}"
-          data-date="{{ cert.date | default: cert.expected | date: '%Y-%m' }}">
+          data-date="{{ cert.date | default: cert.expected | date: '%Y-%m' }}"
+        >
           <h4 class="certification-title">
             {{ cert.name }}
-            {%- if cert.status == "ongoing" -%}
-              <span class="cert-badge">
-                (Ongoing)</span>
+            {%- if cert.status == 'ongoing' -%}
+              <span class="cert-badge"> (Ongoing)</span>
             {%- endif -%}
           </h4>
 
@@ -28,20 +28,14 @@
               <div class="certification-issuer">{{ cert.issuer }}</div>
             {%- endif -%}
 
-            {%- if cert.status == "ongoing" and cert.expected -%}
-              <div class="certification-date">
-                In progress — Expected: {{ cert.expected }}
-              </div>
+            {%- if cert.status == 'ongoing' and cert.expected -%}
+              <div class="certification-date">In progress — Expected: {{ cert.expected }}</div>
             {%- elsif cert.date -%}
-              <div class="certification-date">
-                Issued: {{ cert.date }}
-              </div>
+              <div class="certification-date">Issued: {{ cert.date }}</div>
             {%- endif -%}
 
             {%- if cert.duration -%}
-              <div class="certification-duration">
-                Duration: {{ cert.duration }}
-              </div>
+              <div class="certification-duration">Duration: {{ cert.duration }}</div>
             {%- endif -%}
           </div>
 
@@ -51,7 +45,8 @@
                 href="{{ cert.url }}"
                 target="_blank"
                 rel="noopener"
-                class="certification-link">
+                class="certification-link"
+              >
                 Event Information
               </a>
             {%- endif -%}
@@ -61,7 +56,8 @@
                 href="{{ cert.pdf }}"
                 target="_blank"
                 rel="noopener"
-                class="certification-link">
+                class="certification-link"
+              >
                 View Certificate (PDF)
               </a>
             {%- endif -%}
@@ -81,8 +77,18 @@
         if (!dateStr) return new Date(0);
 
         const months = {
-          jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
-          jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12'
+          jan: '01',
+          feb: '02',
+          mar: '03',
+          apr: '04',
+          may: '05',
+          jun: '06',
+          jul: '07',
+          aug: '08',
+          sep: '09',
+          oct: '10',
+          nov: '11',
+          dec: '12',
         };
 
         const parts = dateStr.toLowerCase().split(' ');
