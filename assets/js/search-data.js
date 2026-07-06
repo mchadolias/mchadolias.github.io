@@ -73,6 +73,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-m-happy-to-announce-that-i-have-started-my-phd-at-ific-working-with-the-km3net-experiment-under-the-vega-group",
           title: 'I’m happy to announce that I have started my PhD at IFIC, working...',
           description: "",
+          section: "News",},{id: "news-from-june-7th-to-12th-i-had-the-opportunity-to-participate-in-the-km3net-spring-collaboration-meeting-in-bratislava-slovakia-hosted-by-comenius-university-as-this-was-my-first-collaboration-meeting-as-a-phd-student-i-presented-my-recent-work-for-the-machine-learning-activities-within-the-neutrino-oscillation-working-group-titled-boosted-decision-trees-redesign-for-the-oscillation-pipeline-and-beyond",
+          title: 'From June 7th to 12th, I had the opportunity to participate in the...',
+          description: "",
           section: "News",},{id: "projects-antares-processing-pipeline",
           title: 'ANTARES Processing Pipeline',
           description: "A processing pipeline that converts ANTARES neutrino telescope data (AntDSTs) into a Swim-compatible format. It handles file merging, applies oscillation weights and corrections, and integrates ML-based NNFit reconstructions for analysis.",
@@ -98,6 +101,11 @@ ninja.data = [{
           description: "Machine learning system for classifying pulsar stars from astronomical data using the HTRU2 dataset",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_pulsar_classification/";
+            },},{id: "projects-km3tpi-tree-based-particle-identification",
+          title: 'KM3TPI - Tree-based Particle Identification',
+          description: "The module being developed to become KM3NeT&#39;s standard data-processing and machine-learning pipeline - converting ROOT/DST files into ML-ready Parquet datasets and training XGBoost-based particle identification classifiers, for use on a computing cluster or locally.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_bdt_in_km3net/";
             },},{
         id: 'social-cv',
         title: 'CV',
