@@ -1,3 +1,9 @@
+- name: "KM3NeT Collaboration Meeting - Bratislava 2026"
+  issuer: "Comenius University | KM3NeT Collaboration"
+  date: "Jun 2026"
+  pdf: "/assets/pdf/certificates/Attendance_KM3NeT_Bratislava2026.pdf"
+  url: "https://indico.cern.ch/event/1647924/"
+
 - name: "CaLISTA Workshop on Scientific Writing and Dissemination Skills"
   issuer: "University of Valencia | CaLISTA COST ACTIONS"
   date: "Apr 2026"
@@ -15,6 +21,12 @@
   date: "Feb 2026"
   pdf: "/assets/pdf/certificates/ACME_GAMMAPY.pdf"
   url: "https://indico.global/event/17199/"
+
+- name: "KM3NeT Collaboration Meeting - Valencia 2026"
+  issuer: "University of Valencia | Instituto de Física Corpuscular (IFIC) | KM3NeT Collaboration"
+  date: "Jan 2026"
+  pdf: "/assets/pdf/certificates/Attendance_KM3NeT_Valencia2026.pdf"
+  url: "https://indico.cern.ch/event/1592092/"
 
 #- name: "Machine Learning ZoomCamp"
 #  issuer: "DataTalks Club"
