@@ -46,7 +46,7 @@ ninja.data = [{
           },
         },{id: "nav-certifications",
           title: "certifications",
-          description: "Professional certifications and specialized training programs completed in particle physics, software development, and data analysis.",
+          description: "Professional certifications, specialized training programs, and collaboration meetings attended in particle physics, software development, and data analysis.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/certifications/";
