@@ -3,7 +3,7 @@ layout: page
 title: Tau Appearance Measurement
 description: This analysis investigates tau neutrino appearance from atmospheric neutrino oscillations using ANTARES. It evaluates reconstruction algorithms, implements quality cuts, and uses a profile likelihood approach to assess sensitivity to the νμ→ντ oscillation channel.
 img: assets/img/projects/oscillation_numu_nutau.png
-importance: 2
+importance: 3
 github: https://github.com/mchadolias/tau-appearance-antares
 category: Physics Research & Computing
 related_publications: false

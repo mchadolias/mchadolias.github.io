@@ -1,4 +1,5 @@
 - name: "KM3NeT Collaboration Meeting - Bratislava 2026"
+  type: conference
   issuer: "Comenius University | KM3NeT Collaboration"
   date: "Jun 2026"
   pdf: "/assets/pdf/certificates/Attendance_KM3NeT_Bratislava2026.pdf"
@@ -23,6 +24,7 @@
   url: "https://indico.global/event/17199/"
 
 - name: "KM3NeT Collaboration Meeting - Valencia 2026"
+  type: conference
   issuer: "University of Valencia | Instituto de Física Corpuscular (IFIC) | KM3NeT Collaboration"
   date: "Jan 2026"
   pdf: "/assets/pdf/certificates/Attendance_KM3NeT_Valencia2026.pdf"

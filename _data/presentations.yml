@@ -1,4 +1,11 @@
-- title: "Boosted Decision Trees redesign for oscillation pipeline and beyond"
+- title: "Boosted Decision Trees redesign for the oscillation pipeline and beyond"
+  occasion: "KM3NeT Spring Collaboration Meeting"
+  place: "Bratislava, Slovakia"
+  date: "Jun 2026"
+  sort_date: "2026-06"
+  # no slides published: this version carries collaboration-internal material
+
+- title: "Boosted Decision Trees redesign for the oscillation pipeline and beyond"
   occasion: "KM3NeT ML WG Meeting"
   place: "Online"
   date: "Jun 2026"

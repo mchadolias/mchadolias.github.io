@@ -58,7 +58,7 @@ Containment/fiducial-volume tagging is identified as a natural future extension 
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/km3tpi_preprocess_workflow.svg" title="km3tpi preprocessing pipeline" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/km3tpi_preprocess_workflow.svg" title="km3tpi preprocessing pipeline" alt="Flowchart of the km3tpi preprocessing pipeline: DST ROOT files feed stage 1 prepare, which fans out to stage 2 discover and stage 3 convert per chunk, producing canonical Parquet that feeds stages 4 and 5 (validate, ml_manifest, metadata) and finally km3tpi.ml." zoomable=true class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 
@@ -68,13 +68,13 @@ Containment/fiducial-volume tagging is identified as a natural future extension 
 4. **Validate** - checks schema consistency across all chunks of a sample, emitting a `_validated` sentinel.
 5. **ML Manifest & Metadata** - lightweight JSON manifests (`ml/{dataset}/manifest.json`, `ml/{dataset}/metadata.json`) pointing to chunk directories - no data duplication, pointers + column lists, event counts, and class balance only.
 
-The canonical Parquet output (`parquet/{sample}/chunk_N.parquet`) is a single copy that both feeds into stage 4 and is the only data the ML layer ever reads.
+The canonical Parquet output (`parquet/{sample}/chunk_N.parquet`) is a single copy that both feeds into stages 4–5 and is the only data the ML layer ever reads.
 
 ### Machine Learning Layer (`km3tpi.ml`)
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/projects/km3tpi_ml_workflow.svg" title="km3tpi machine learning pipeline" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/projects/km3tpi_ml_workflow.svg" title="km3tpi machine learning pipeline" alt="Flowchart of the km3tpi machine learning pipeline: MLConfig YAML, dataset manifest, dataset metadata and Parquet chunks feed prepare_split (with inspect_split as a side branch), then the conditional tune stage, then fit, whose model.pkl fans out to evaluate, diagnose and infer." zoomable=true class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 

@@ -3,7 +3,7 @@ layout: page
 title: KM3NeT/ORCA Reconstruction Studies
 description: An investigation into energy reconstruction biases for muon neutrinos in the ORCA6 detector. Identified track geometry relative to the sparse detector array as the primary cause of systematic energy miscalibrations.
 img: assets/img/projects/orca_event_distribution.png
-importance: 3
+importance: 4
 github: https://github.com/mchadolias/orca6-energy-reconstruction-studies
 category: Physics Research & Computing
 related_publications: false

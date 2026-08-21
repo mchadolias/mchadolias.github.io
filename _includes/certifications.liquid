@@ -1,78 +1,94 @@
 {%- if site.data.certifications -%}
-  <div class="certifications-container">
-    <div class="certifications-header">
-      <h2>Seminars & Workshops</h2>
+  {%- assign workshops = site.data.certifications | where_exp: 'cert', "cert.type != 'conference'" -%}
+  {%- assign conferences = site.data.certifications | where: 'type', 'conference' -%}
 
-      <div class="sort-controls">
-        <button class="sort-btn active" data-sort="date-desc">Newest First</button>
-        <button class="sort-btn" data-sort="date-asc">Oldest First</button>
-      </div>
-    </div>
+  {%- for group in (1..2) -%}
+    {%- if group == 1 -%}
+      {%- assign entries = workshops -%}
+      {%- assign heading = 'Seminars & Workshops' -%}
+      {%- assign pdf_label = 'View Certificate (PDF)' -%}
+    {%- else -%}
+      {%- assign entries = conferences -%}
+      {%- assign heading = 'Conferences & Collaboration Meetings' -%}
+      {%- assign pdf_label = 'View Attendance (PDF)' -%}
+    {%- endif -%}
 
-    <div class="certifications-list" id="certifications-list">
-      {%- for cert in site.data.certifications -%}
-        <div
-          class="certification-item"
-          data-name="{{ cert.name | downcase }}"
-          data-date="{{ cert.date | default: cert.expected | date: '%Y-%m' }}"
-        >
-          <h4 class="certification-title">
-            {{ cert.name }}
-            {%- if cert.status == 'ongoing' -%}
-              <span class="cert-badge"> (Ongoing)</span>
-            {%- endif -%}
-          </h4>
+    {%- if entries.size > 0 -%}
+      <div class="certifications-container">
+        <div class="certifications-header">
+          <h2>{{ heading }}</h2>
 
-          <div class="certification-details">
-            {%- if cert.issuer -%}
-              <div class="certification-issuer">{{ cert.issuer }}</div>
-            {%- endif -%}
-
-            {%- if cert.status == 'ongoing' and cert.expected -%}
-              <div class="certification-date">In progress — Expected: {{ cert.expected }}</div>
-            {%- elsif cert.date -%}
-              <div class="certification-date">Issued: {{ cert.date }}</div>
-            {%- endif -%}
-
-            {%- if cert.duration -%}
-              <div class="certification-duration">Duration: {{ cert.duration }}</div>
-            {%- endif -%}
-          </div>
-
-          <div class="certification-links">
-            {%- if cert.url -%}
-              <a
-                href="{{ cert.url }}"
-                target="_blank"
-                rel="noopener"
-                class="certification-link"
-              >
-                Event Information
-              </a>
-            {%- endif -%}
-
-            {%- if cert.pdf -%}
-              <a
-                href="{{ cert.pdf }}"
-                target="_blank"
-                rel="noopener"
-                class="certification-link"
-              >
-                View Certificate (PDF)
-              </a>
-            {%- endif -%}
+          <div class="sort-controls">
+            <button class="sort-btn active" data-sort="date-desc">Newest First</button>
+            <button class="sort-btn" data-sort="date-asc">Oldest First</button>
           </div>
         </div>
-      {%- endfor -%}
-    </div>
-  </div>
+
+        <div class="certifications-list">
+          {%- for cert in entries -%}
+            <div
+              class="certification-item"
+              data-name="{{ cert.name | downcase }}"
+              data-date="{{ cert.date | default: cert.expected | date: '%Y-%m' }}"
+            >
+              <h4 class="certification-title">
+                {{ cert.name }}
+                {%- if cert.status == 'ongoing' -%}
+                  <span class="cert-badge"> (Ongoing)</span>
+                {%- endif -%}
+              </h4>
+
+              <div class="certification-details">
+                {%- if cert.issuer -%}
+                  <div class="certification-issuer">{{ cert.issuer }}</div>
+                {%- endif -%}
+
+                {%- if cert.status == 'ongoing' and cert.expected -%}
+                  <div class="certification-date">In progress — Expected: {{ cert.expected }}</div>
+                {%- elsif cert.date -%}
+                  <div class="certification-date">
+                    {%- if cert.type == 'conference' -%}Attended{%- else -%}Issued{%- endif -%}
+                    : {{ cert.date }}
+                  </div>
+                {%- endif -%}
+
+                {%- if cert.duration -%}
+                  <div class="certification-duration">Duration: {{ cert.duration }}</div>
+                {%- endif -%}
+              </div>
+
+              <div class="certification-links">
+                {%- if cert.url -%}
+                  <a
+                    href="{{ cert.url }}"
+                    target="_blank"
+                    rel="noopener"
+                    class="certification-link"
+                  >
+                    Event Information
+                  </a>
+                {%- endif -%}
+
+                {%- if cert.pdf -%}
+                  <a
+                    href="{{ cert.pdf }}"
+                    target="_blank"
+                    rel="noopener"
+                    class="certification-link"
+                  >
+                    {{ pdf_label }}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const sortButtons = document.querySelectorAll('.sort-btn');
-      const certificationsList = document.getElementById('certifications-list');
-      const certificationItems = Array.from(certificationsList.querySelectorAll('.certification-item'));
-
       function parseDate(dateStr) {
         if (!dateStr) return new Date(0);
 
@@ -99,34 +115,41 @@
         return new Date(dateStr) || new Date(0);
       }
 
-      function sortCertifications(sortType) {
-        certificationItems.sort((a, b) => {
-          const aDate = parseDate(a.dataset.date);
-          const bDate = parseDate(b.dataset.date);
+      document.querySelectorAll('.certifications-container').forEach(function (container) {
+        const sortButtons = container.querySelectorAll('.sort-btn');
+        const certificationsList = container.querySelector('.certifications-list');
+        if (!certificationsList) return;
+        const certificationItems = Array.from(certificationsList.querySelectorAll('.certification-item'));
 
-          switch (sortType) {
-            case 'date-desc':
-              return bDate - aDate;
-            case 'date-asc':
-              return aDate - bDate;
-            default:
-              return 0;
-          }
+        function sortCertifications(sortType) {
+          certificationItems.sort((a, b) => {
+            const aDate = parseDate(a.dataset.date);
+            const bDate = parseDate(b.dataset.date);
+
+            switch (sortType) {
+              case 'date-desc':
+                return bDate - aDate;
+              case 'date-asc':
+                return aDate - bDate;
+              default:
+                return 0;
+            }
+          });
+
+          certificationsList.innerHTML = '';
+          certificationItems.forEach((item) => certificationsList.appendChild(item));
+        }
+
+        sortButtons.forEach((button) => {
+          button.addEventListener('click', function () {
+            sortButtons.forEach((btn) => btn.classList.remove('active'));
+            this.classList.add('active');
+            sortCertifications(this.dataset.sort);
+          });
         });
 
-        certificationsList.innerHTML = '';
-        certificationItems.forEach((item) => certificationsList.appendChild(item));
-      }
-
-      sortButtons.forEach((button) => {
-        button.addEventListener('click', function () {
-          sortButtons.forEach((btn) => btn.classList.remove('active'));
-          this.classList.add('active');
-          sortCertifications(this.dataset.sort);
-        });
+        sortCertifications('date-desc');
       });
-
-      sortCertifications('date-desc');
     });
   </script>
 {%- endif -%}
